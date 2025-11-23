@@ -3,11 +3,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function Header() {
+  // State to manage mobile menu open/close
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div id="all">
+      {/* ==================== CUSTOM STYLES ==================== */}
       <style>{`
+        /* ========== CSS VARIABLES / DESIGN TOKENS ========== */
         :root {
           --primary: #0066cc;
           --primary-dark: #0052a3;
@@ -20,16 +23,29 @@ function Header() {
           --border: #e0e0e0;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; height: 100%; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+        /* ========== GLOBAL STYLES ========== */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
 
-        /* Navbar */
+        html, body {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+        }
+
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* ========== NAVBAR STYLING ========== */
         .site-navbar {
           background: rgba(255, 255, 255, 0.98);
           backdrop-filter: blur(10px);
           border-bottom: 2px solid var(--border);
-          box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
           padding: 1rem 0;
           position: fixed;
           top: 0;
@@ -37,6 +53,7 @@ function Header() {
           z-index: 1030;
         }
 
+        /* ========== BRAND/LOGO STYLING ========== */
         .site-brand {
           color: var(--primary);
           font-weight: 700;
@@ -49,35 +66,86 @@ function Header() {
           transition: transform 0.2s ease;
         }
 
+        /* Brand hover effect - subtle lift */
         .site-brand:hover {
           color: var(--primary-dark);
           transform: translateY(-2px);
         }
 
+        /* ========== NAVIGATION LINKS STYLING ========== */
         .navbar-nav .nav-link {
           color: var(--text);
           font-weight: 600;
           font-size: 0.95rem;
-          padding: 0.5rem 1rem;
-          transition: all 0.2s ease;
+          padding: 0.65rem 1.25rem;
+          transition: all 0.3s ease;
           position: relative;
+          margin: 0 0.35rem;
+          border-radius: 6px;
         }
 
+        /* Top gradient line on hover */
+        .navbar-nav .nav-link::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 0;
+          height: 2.5px;
+          background: linear-gradient(90deg, var(--primary-light), var(--primary));
+          transform: translateX(-50%);
+          transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+          border-radius: 2px;
+        }
+
+        /* Bottom gradient line on hover */
         .navbar-nav .nav-link::after {
           content: '';
           position: absolute;
           bottom: 0;
           left: 50%;
           width: 0;
-          height: 2px;
-          background: var(--primary);
+          height: 2.5px;
+          background: linear-gradient(90deg, var(--primary), var(--primary-light));
           transform: translateX(-50%);
-          transition: width 0.3s ease;
+          transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+          border-radius: 2px;
         }
 
-        .navbar-nav .nav-link:hover::after { width: 100%; }
-        .navbar-nav .nav-link:hover { color: var(--primary); }
+        /* Animate lines on hover */
+        .navbar-nav .nav-link:hover::before {
+          width: 85%;
+        }
 
+        .navbar-nav .nav-link:hover::after {
+          width: 85%;
+        }
+
+        /* Link hover state with color change and shadow */
+        .navbar-nav .nav-link:hover {
+          color: var(--primary);
+          background: rgba(0, 102, 204, 0.08);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 102, 204, 0.12);
+        }
+
+        /* ========== DESKTOP SPECIFIC NAV EFFECTS ========== */
+        @media (min-width: 992px) {
+          .navbar-nav .nav-link {
+            overflow: hidden;
+          }
+
+          .navbar-nav .nav-link::after {
+            bottom: 0;
+          }
+
+          /* Enhanced glow effect on desktop hover */
+          .navbar-nav .nav-link:hover {
+            box-shadow: 0 4px 20px rgba(0, 102, 204, 0.2), inset 0 0 10px rgba(0, 102, 204, 0.05);
+          }
+        }
+
+        /* ========== PRIMARY BUTTON STYLING ========== */
         .btn-primary-nav {
           background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
           color: #fff;
@@ -91,6 +159,7 @@ function Header() {
           letter-spacing: 0.02em;
         }
 
+        /* Button hover with enhanced shadow and lift */
         .btn-primary-nav:hover {
           background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
           box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
@@ -98,7 +167,7 @@ function Header() {
           color: #fff;
         }
 
-        /* Hero - Full Page */
+        /* ========== HERO SECTION STYLING ========== */
         header.hero {
           background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
           color: #fff;
@@ -113,6 +182,7 @@ function Header() {
           margin: 0;
         }
 
+        /* Top right floating circle background element */
         header.hero::before {
           content: '';
           position: absolute;
@@ -120,12 +190,13 @@ function Header() {
           right: -10%;
           width: 600px;
           height: 600px;
-          background: rgba(255,255,255,0.08);
+          background: rgba(255, 255, 255, 0.08);
           border-radius: 50%;
           animation: float 6s ease-in-out infinite;
           filter: blur(40px);
         }
 
+        /* Bottom left floating circle background element */
         header.hero::after {
           content: '';
           position: absolute;
@@ -133,39 +204,45 @@ function Header() {
           left: -5%;
           width: 400px;
           height: 400px;
-          background: rgba(255,255,255,0.05);
+          background: rgba(255, 255, 255, 0.05);
           border-radius: 50%;
           animation: float 8s ease-in-out infinite reverse;
           filter: blur(40px);
         }
 
+        /* Floating animation keyframes */
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(30px); }
         }
 
-        .hero-content { position: relative; z-index: 10; }
+        /* Hero content z-index layering */
+        .hero-content {
+          position: relative;
+          z-index: 10;
+        }
 
+        /* ========== HERO TITLE STYLING ========== */
         .hero-title {
           font-size: clamp(2.5rem, 5vw, 4rem);
           line-height: 1.15;
           margin-bottom: 1.75rem;
           font-weight: 800;
           letter-spacing: -0.025em;
-          text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .hero-title br + * { color: var(--primary-light); }
-
+        /* ========== HERO LEAD TEXT ========== */
         .hero-lead {
           font-size: clamp(1rem, 2vw, 1.25rem);
-          color: rgba(255,255,255,0.95);
+          color: rgba(255, 255, 255, 0.95);
           margin-bottom: 2.5rem;
           line-height: 1.75;
           max-width: 600px;
           font-weight: 400;
         }
 
+        /* ========== CTA BUTTONS CONTAINER ========== */
         .hero-cta {
           display: flex;
           flex-wrap: wrap;
@@ -173,6 +250,7 @@ function Header() {
           margin-bottom: 3rem;
         }
 
+        /* ========== HERO BUTTON BASE STYLING ========== */
         .btn-hero {
           padding: 1rem 2.25rem;
           font-weight: 700;
@@ -183,9 +261,10 @@ function Header() {
           font-size: 1rem;
           letter-spacing: 0.02em;
           text-transform: uppercase;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
+        /* Primary hero button (white background) */
         .btn-hero-primary {
           background: #fff;
           color: var(--primary);
@@ -195,59 +274,69 @@ function Header() {
         .btn-hero-primary:hover {
           background: var(--light);
           transform: translateY(-4px);
-          box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
           letter-spacing: 0.03em;
         }
 
+        /* Secondary hero button (transparent with glassmorphism) */
         .btn-hero-secondary {
-          background: rgba(255,255,255,0.15);
+          background: rgba(255, 255, 255, 0.15);
           color: #fff;
           border-color: #fff;
           backdrop-filter: blur(10px);
         }
 
         .btn-hero-secondary:hover {
-          background: rgba(255,255,255,0.25);
+          background: rgba(255, 255, 255, 0.25);
           border-color: #fff;
           transform: translateY(-4px);
-          box-shadow: 0 12px 30px rgba(255,255,255,0.2);
+          box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
         }
 
+        /* ========== HERO IMAGE STYLING ========== */
         .hero-img {
           max-width: 500px;
           width: 100%;
           border-radius: 16px;
-          box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
           object-fit: cover;
           animation: slideUp 0.8s ease-out;
-          border: 3px solid rgba(255,255,255,0.1);
+          border: 3px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* Image slide-up animation on page load */
         @keyframes slideUp {
-          from { opacity: 0; transform: translateY(40px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
+        /* ========== TRUST BADGE STYLING ========== */
         .trust-badge {
-          color: rgba(255,255,255,0.95);
+          color: rgba(255, 255, 255, 0.95);
           font-size: 1.05rem;
           font-weight: 600;
-          background: rgba(255,255,255,0.1);
+          background: rgba(255, 255, 255, 0.1);
           padding: 0.75rem 1.5rem;
           border-radius: 50px;
           display: inline-block;
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255,255,255,0.2);
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Mobile Menu - Professional Sidebar */
+        /* ========== MOBILE MENU OVERLAY ========== */
         .mobile-menu-overlay {
           position: fixed;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(0,0,0,0.6);
+          background: rgba(0, 0, 0, 0.6);
           z-index: 1040;
           opacity: 0;
           pointer-events: none;
@@ -255,11 +344,13 @@ function Header() {
           backdrop-filter: blur(5px);
         }
 
+        /* Overlay active state */
         .mobile-menu-overlay.active {
           opacity: 1;
           pointer-events: all;
         }
 
+        /* ========== MOBILE MENU PANEL ========== */
         .mobile-menu-panel {
           position: fixed;
           top: 0;
@@ -271,15 +362,17 @@ function Header() {
           z-index: 1050;
           transition: right 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
           overflow-y: auto;
-          box-shadow: -6px 0 30px rgba(0,0,0,0.2);
+          box-shadow: -6px 0 30px rgba(0, 0, 0, 0.2);
           display: flex;
           flex-direction: column;
         }
 
+        /* Panel active state - slide in from right */
         .mobile-menu-panel.active {
           right: 0;
         }
 
+        /* ========== MOBILE MENU HEADER ========== */
         .mobile-menu-header {
           display: flex;
           justify-content: space-between;
@@ -299,9 +392,10 @@ function Header() {
           letter-spacing: -0.01em;
         }
 
+        /* ========== MOBILE MENU CLOSE BUTTON ========== */
         .mobile-menu-close {
-          background: rgba(255,255,255,0.2);
-          border: 2px solid rgba(255,255,255,0.3);
+          background: rgba(255, 255, 255, 0.2);
+          border: 2px solid rgba(255, 255, 255, 0.3);
           font-size: 1.75rem;
           color: #fff;
           cursor: pointer;
@@ -315,19 +409,22 @@ function Header() {
           border-radius: 8px;
         }
 
+        /* Close button hover with rotation effect */
         .mobile-menu-close:hover {
           color: #fff;
-          background: rgba(255,255,255,0.3);
+          background: rgba(255, 255, 255, 0.3);
           border-color: #fff;
           transform: rotate(90deg);
         }
 
+        /* ========== MOBILE MENU BODY ========== */
         .mobile-menu-body {
           padding: 2.5rem 1.75rem;
           flex: 1;
           overflow-y: auto;
         }
 
+        /* ========== MOBILE MENU SECTIONS ========== */
         .mobile-menu-section {
           margin-bottom: 2.75rem;
         }
@@ -336,6 +433,7 @@ function Header() {
           margin-bottom: 1.5rem;
         }
 
+        /* Section title with uppercase styling */
         .mobile-menu-section-title {
           font-size: 0.8rem;
           font-weight: 800;
@@ -346,6 +444,7 @@ function Header() {
           padding-left: 1rem;
         }
 
+        /* ========== MOBILE NAVIGATION LINKS ========== */
         .mobile-nav {
           display: flex;
           flex-direction: column;
@@ -367,12 +466,14 @@ function Header() {
           background: transparent;
         }
 
+        /* Mobile nav hover effect with gradient background */
         .mobile-nav a:hover {
           background: linear-gradient(90deg, rgba(0, 102, 204, 0.1), transparent);
           color: var(--primary);
           padding-left: 1.35rem;
         }
 
+        /* Left border indicator for mobile nav links */
         .mobile-nav a::before {
           content: '';
           position: absolute;
@@ -384,17 +485,19 @@ function Header() {
           transition: height 0.2s ease;
         }
 
+        /* Animate left border on hover */
         .mobile-nav a:hover::before {
           height: 100%;
         }
 
+        /* ========== MOBILE MENU FOOTER ========== */
         .mobile-menu-footer {
           border-top: 2px solid var(--border);
           padding: 2rem 1.75rem;
           background: linear-gradient(180deg, var(--light), rgba(0, 102, 204, 0.02));
           margin-top: auto;
           flex-shrink: 0;
-          box-shadow: 0 -4px 15px rgba(0,0,0,0.05);
+          box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .mobile-menu-footer .btn {
@@ -408,6 +511,7 @@ function Header() {
           box-shadow: 0 4px 15px rgba(0, 102, 204, 0.25);
         }
 
+        /* ========== MOBILE HAMBURGER BUTTON ========== */
         .mobile-hamburger {
           border: 2px solid var(--primary);
           background: transparent;
@@ -424,18 +528,22 @@ function Header() {
           transition: all 0.2s ease;
         }
 
+        /* Hamburger hover effect */
         .mobile-hamburger:hover {
           background: var(--primary);
           color: #fff;
           transform: scale(1.05);
         }
 
+        /* Active hamburger state */
         .mobile-hamburger.active {
           color: var(--primary-dark);
           border-color: var(--primary-dark);
         }
 
-        /* Responsive */
+        /* ========== RESPONSIVE BREAKPOINTS ========== */
+
+        /* Tablet and below (max-width: 991.98px) */
         @media (max-width: 991.98px) {
           .hero-title { font-size: 2.5rem; margin-bottom: 1.5rem; }
           .hero-lead { font-size: 1rem; margin-bottom: 2rem; }
@@ -444,6 +552,7 @@ function Header() {
           header.hero { padding: 120px 1.25rem 1.5rem 1.25rem; }
         }
 
+        /* Medium tablet (max-width: 767.98px) */
         @media (max-width: 767.98px) {
           header.hero {
             padding: 100px 1rem 1rem 1rem;
@@ -488,29 +597,15 @@ function Header() {
             max-height: 350px;
           }
 
-          .mobile-menu-panel {
-            max-width: 100%;
-          }
-
-          .mobile-menu-header {
-            padding: 1.5rem;
-          }
-
-          .mobile-menu-body {
-            padding: 2rem 1.25rem;
-          }
-
-          .mobile-menu-footer {
-            padding: 1.75rem 1.25rem;
-          }
-
-          .mobile-nav a {
-            padding: 1rem 0.9rem;
-          }
-
+          .mobile-menu-panel { max-width: 100%; }
+          .mobile-menu-header { padding: 1.5rem; }
+          .mobile-menu-body { padding: 2rem 1.25rem; }
+          .mobile-menu-footer { padding: 1.75rem 1.25rem; }
+          .mobile-nav a { padding: 1rem 0.9rem; }
           .site-navbar { padding: 0.75rem 0; }
         }
 
+        /* Small mobile (max-width: 575.98px) */
         @media (max-width: 575.98px) {
           header.hero {
             padding: 90px 0.75rem 0.75rem 0.75rem;
@@ -534,35 +629,20 @@ function Header() {
             font-size: 0.85rem;
           }
 
-          .mobile-menu-body {
-            padding: 1.75rem 0.9rem;
-          }
-
-          .mobile-menu-section {
-            margin-bottom: 2rem;
-          }
-
-          .mobile-nav a {
-            padding: 0.95rem 0.8rem;
-            font-size: 0.9rem;
-          }
-
-          .mobile-menu-section-title {
-            font-size: 0.75rem;
-            padding-left: 0.8rem;
-          }
-
-          .trust-badge {
-            font-size: 0.85rem;
-            padding: 0.65rem 1.25rem;
-          }
+          .mobile-menu-body { padding: 1.75rem 0.9rem; }
+          .mobile-menu-section { margin-bottom: 2rem; }
+          .mobile-nav a { padding: 0.95rem 0.8rem; font-size: 0.9rem; }
+          .mobile-menu-section-title { font-size: 0.75rem; padding-left: 0.8rem; }
+          .trust-badge { font-size: 0.85rem; padding: 0.65rem 1.25rem; }
         }
       `}</style>
 
-      {/* Navbar */}
+      {/* ==================== NAVBAR SECTION ==================== */}
       <nav className="navbar site-navbar">
         <div className="container">
+          {/* Logo/Brand Section */}
           <a className="navbar-brand site-brand" href="/">
+            {/* SVG Icon with gradient */}
             <svg
               width="32"
               height="32"
@@ -571,6 +651,7 @@ function Header() {
               focusable="false"
             >
               <defs>
+                {/* Gradient definition for brand icon */}
                 <linearGradient
                   id="brandGrad"
                   x1="0%"
@@ -582,7 +663,9 @@ function Header() {
                   <stop offset="100%" stopColor="#3d8eff" />
                 </linearGradient>
               </defs>
+              {/* Background rounded rectangle */}
               <rect width="32" height="32" rx="8" fill="url(#brandGrad)"></rect>
+              {/* Letter P text */}
               <text
                 x="50%"
                 y="50%"
@@ -595,11 +678,13 @@ function Header() {
                 P
               </text>
             </svg>
+            {/* Brand text */}
             Pro Hub
           </a>
 
-          {/* Desktop nav */}
-          <div className="d-none d-lg-flex align-items-center ms-auto gap-3">
+          {/* Desktop Navigation - Hidden on tablets and below */}
+          <div className="d-none d-lg-flex align-items-center ms-auto gap-4">
+            {/* Navigation Links */}
             <a className="nav-link" href="#">
               Home
             </a>
@@ -612,10 +697,22 @@ function Header() {
             <a className="nav-link" href="#">
               Docs
             </a>
+
+            {/* Visual Separator between nav links and CTA button */}
+            <div
+              style={{
+                width: "1px",
+                height: "24px",
+                background: "var(--border)",
+                margin: "0 0.5rem",
+              }}
+            ></div>
+
+            {/* Primary CTA Button */}
             <button className="btn btn-primary-nav">Get Started</button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Hamburger Menu Button - Visible only on tablets and below */}
           <button
             className={`mobile-hamburger d-lg-none ${menuOpen ? "active" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -627,20 +724,24 @@ function Header() {
         </div>
       </nav>
 
-      {/* Professional Mobile Menu */}
+      {/* ==================== MOBILE MENU OVERLAY ==================== */}
+      {/* Clicking overlay closes the menu */}
       <div
         className={`mobile-menu-overlay ${menuOpen ? "active" : ""}`}
         onClick={() => setMenuOpen(false)}
         role="presentation"
       ></div>
 
+      {/* ==================== MOBILE MENU PANEL ==================== */}
       <div
         className={`mobile-menu-panel ${menuOpen ? "active" : ""}`}
         role="navigation"
         aria-label="Mobile menu"
       >
+        {/* Menu Header with Close Button */}
         <div className="mobile-menu-header">
           <h5>Menu</h5>
+          {/* Close button with X icon */}
           <button
             className="mobile-menu-close"
             onClick={() => setMenuOpen(false)}
@@ -650,7 +751,9 @@ function Header() {
           </button>
         </div>
 
+        {/* Menu Body with Sections */}
         <div className="mobile-menu-body">
+          {/* Main Navigation Section */}
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Main Navigation</div>
             <nav className="mobile-nav">
@@ -669,6 +772,7 @@ function Header() {
             </nav>
           </div>
 
+          {/* Resources Section */}
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Resources</div>
             <nav className="mobile-nav">
@@ -685,8 +789,11 @@ function Header() {
           </div>
         </div>
 
+        {/* Menu Footer with CTA and Version Info */}
         <div className="mobile-menu-footer">
+          {/* Primary CTA Button */}
           <button className="btn btn-primary-nav">Get Started Free</button>
+          {/* Version Info */}
           <p
             style={{
               fontSize: "0.75rem",
@@ -702,36 +809,49 @@ function Header() {
         </div>
       </div>
 
-      {/* Hero Section - Full Page 100vh */}
+      {/* ==================== HERO SECTION ==================== */}
+      {/* Full-page hero with gradient background */}
       <header className="hero">
         <div className="container">
+          {/* Hero content row with flexbox alignment */}
           <div className="row align-items-center g-5 h-100">
+            {/* Left column - Text Content */}
             <div className="col-12 col-lg-6 hero-content">
+              {/* Main Hero Title */}
               <h1 className="hero-title">
                 Learn Coding <br /> Without Limits
               </h1>
+
+              {/* Hero Subtitle/Lead Text */}
               <p className="hero-lead">
                 Everything you need to master programming — from beginner to
                 expert level. Start your journey today.
               </p>
 
+              {/* CTA Buttons Container */}
               <div className="hero-cta">
+                {/* Primary CTA - White button */}
                 <button className="btn btn-hero btn-hero-primary">
                   Get Started Free
                 </button>
+
+                {/* Secondary CTA - Transparent button */}
                 <button className="btn btn-hero btn-hero-secondary">
                   Watch Demo
                 </button>
               </div>
 
+              {/* Trust badge showing social proof */}
               <p className="trust-badge">
                 ✓ Trusted by 800+ Students Worldwide
               </p>
             </div>
 
+            {/* Right column - Hero Image */}
             <div className="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+              {/* Hero image with responsive sizing */}
               <img
-                src="pics/note-hand.jpg"
+                src="./note-hand.jpg"
                 alt="learning illustration"
                 className="hero-img"
               />
@@ -743,4 +863,5 @@ function Header() {
   );
 }
 
+// Export header component for use in other parts of the app
 export default Header;

@@ -1,267 +1,454 @@
-import React, { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function Header() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <header>
+    <div id="all">
       <style>{`
         :root {
-          --wp-blue: #0073aa;
-          --wp-dark: #222;
-          --wp-muted: #6c757d;
-          --wp-cta: #00a859;
+          --primary: #0066cc;
+          --secondary: #00a859;
+          --dark: #1a1a1a;
+          --light: #f8f9fa;
+          --text: #333;
+          --muted: #666;
+          --border: #e0e0e0;
         }
 
-        .wp-navbar {
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+
+        /* Navbar */
+        .site-navbar {
           background: #fff;
-          border-bottom: 1px solid rgba(0,0,0,0.06);
-          box-shadow: 0 1px 0 rgba(0,0,0,0.03);
-          padding: 0.6rem 0;
-          position: relative;
-          z-index: 1200;
+          border-bottom: 1px solid var(--border);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+          padding: 1rem 0;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
         }
 
-        .wp-brand {
-          color: var(--wp-blue);
+        .site-brand {
+          color: var(--primary);
           font-weight: 700;
-          letter-spacing: -0.02em;
-        }
-
-        .wp-sub {
-          color: var(--wp-muted);
-          font-size: 0.85rem;
-          margin-left: .5rem;
-        }
-
-        .wp-nav a {
-          color: var(--wp-dark);
-          font-weight: 500;
-          padding: .5rem .75rem;
-        }
-
-        .wp-cta {
-          background: var(--wp-cta);
-          color: #fff;
-          border-radius: 6px;
-          padding: .45rem .9rem;
-          box-shadow: 0 2px 8px rgba(0,168,89,0.14);
-          font-weight: 600;
-        }
-
-        .wp-hamburger {
-          border: 0;
-          background: transparent;
-          padding: .4rem;
-          font-size: 1rem;
-          color: var(--wp-blue);
-        }
-
-        /* Fullscreen overlay (WordPress-like menu/hero) */
-        .wp-overlay {
-          position: fixed;
-          inset: 0;
-          width: 100%;
-          height: 100vh;
-          background: linear-gradient(180deg, rgba(0,115,170,0.96) 0%, rgba(0,88,140,0.96) 100%);
-          color: #fff;
+          font-size: 1.25rem;
+          letter-spacing: -0.01em;
+          text-decoration: none;
           display: flex;
-          flex-direction: column;
           align-items: center;
-          justify-content: center;
-          padding: 3rem 1.5rem;
-          transition: opacity .25s ease, transform .25s ease;
-          z-index: 1190;
+          gap: 0.5rem;
         }
 
-        .wp-overlay.hidden {
-          opacity: 0;
-          transform: translateY(-6%);
-          pointer-events: none;
+        .site-brand:hover { color: var(--primary); }
+
+        .navbar-nav .nav-link {
+          color: var(--text);
+          font-weight: 500;
+          font-size: 0.95rem;
+          padding: 0.5rem 1rem;
+          transition: color 0.2s ease;
         }
 
-        .wp-overlay .close-btn {
-          position: absolute;
-          right: 1.25rem;
-          top: 1.25rem;
-          background: transparent;
+        .navbar-nav .nav-link:hover { color: var(--primary); }
+
+        .btn-primary-nav {
+          background: var(--primary);
+          color: #fff;
           border: 0;
-          color: rgba(255,255,255,0.95);
-          font-size: 1.6rem;
+          border-radius: 6px;
+          padding: 0.5rem 1.25rem;
+          font-weight: 600;
+          font-size: 0.9rem;
+          transition: all 0.2s ease;
+          box-shadow: 0 2px 8px rgba(0, 102, 204, 0.15);
         }
 
-        .wp-overlay h1 {
-          font-size: clamp(2rem, 4.8vw, 3rem);
-          margin-bottom: .25rem;
+        .btn-primary-nav:hover {
+          background: #0052a3;
+          box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+          transform: translateY(-2px);
+          color: #fff;
+        }
+
+        /* Hero */
+        header.hero {
+          background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+          color: #fff;
+          padding: 5rem 1rem;
+          position: relative;
+          overflow: hidden;
+        }
+
+        header.hero::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: -10%;
+          width: 600px;
+          height: 600px;
+          background: rgba(255,255,255,0.05);
+          border-radius: 50%;
+        }
+
+        .hero-content { position: relative; z-index: 10; }
+
+        .hero-title {
+          font-size: clamp(2rem, 4vw, 3.5rem);
+          line-height: 1.1;
+          margin-bottom: 1rem;
           font-weight: 700;
           letter-spacing: -0.02em;
         }
 
-        .wp-overlay p.lead {
+        .hero-lead {
+          font-size: 1.1rem;
           color: rgba(255,255,255,0.92);
-          margin-bottom: 1.75rem;
+          margin-bottom: 2rem;
+          line-height: 1.6;
+          max-width: 500px;
         }
 
-        .wp-links {
+        .hero-cta {
           display: flex;
-          gap: 1.25rem;
           flex-wrap: wrap;
-          justify-content: center;
+          gap: 1rem;
           margin-bottom: 2rem;
         }
 
-        .wp-link {
-          background: rgba(255,255,255,0.06);
-          padding: .9rem 1.25rem;
-          border-radius: 8px;
-          color: #fff;
-          min-width: 160px;
-          text-align: center;
-          transition: background .15s ease, transform .12s ease;
+        .btn-hero {
+          padding: 0.75rem 1.75rem;
           font-weight: 600;
+          border-radius: 6px;
+          border: 2px solid;
+          transition: all 0.2s ease;
+          cursor: pointer;
         }
 
-        .wp-link:hover {
-          background: rgba(255,255,255,0.12);
+        .btn-hero-primary {
+          background: #fff;
+          color: var(--primary);
+          border-color: #fff;
+        }
+
+        .btn-hero-primary:hover {
+          background: var(--light);
           transform: translateY(-3px);
-          text-decoration: none;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        .wp-search {
-          max-width: 720px;
+        .btn-hero-secondary {
+          background: transparent;
+          color: #fff;
+          border-color: #fff;
+        }
+
+        .btn-hero-secondary:hover {
+          background: rgba(255,255,255,0.1);
+          transform: translateY(-3px);
+        }
+
+        .hero-img {
+          max-width: 500px;
           width: 100%;
+          border-radius: 12px;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+          object-fit: cover;
         }
 
-        @media (min-width: 992px) {
-          .wp-nav { display: flex !important; }
-          .wp-hamburger { display: none; }
+        .trust-badge {
+          color: rgba(255,255,255,0.9);
+          font-size: 0.95rem;
+          font-weight: 500;
         }
 
+        /* Main content */
+        main { padding: 4rem 1rem; }
+
+        .section-title {
+          font-size: clamp(1.75rem, 3vw, 2.5rem);
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+          color: var(--dark);
+        }
+
+        .section-lead {
+          color: var(--muted);
+          font-size: 1.05rem;
+          margin-bottom: 2rem;
+          line-height: 1.6;
+        }
+
+        .card-like {
+          background: #fff;
+          border: 1px solid var(--border);
+          border-radius: 8px;
+          padding: 2rem;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+          transition: all 0.3s ease;
+        }
+
+        .card-like:hover {
+          box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+          transform: translateY(-4px);
+        }
+
+        .card-like h4 {
+          color: var(--dark);
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+        }
+
+        .card-like p { color: var(--muted); }
+
+        .cta-section {
+          background: var(--light);
+          border-radius: 12px;
+          padding: 3rem 2rem;
+          margin-top: 3rem;
+        }
+
+        .cta-section h3 {
+          color: var(--dark);
+          font-weight: 700;
+          margin-bottom: 1rem;
+        }
+
+        .cta-section p { color: var(--muted); margin-bottom: 1.5rem; }
+
+        .btn-cta {
+          background: var(--secondary);
+          color: #fff;
+          border: 0;
+          padding: 0.75rem 2rem;
+          border-radius: 6px;
+          font-weight: 600;
+          transition: all 0.2s ease;
+          box-shadow: 0 2px 8px rgba(0, 168, 89, 0.15);
+        }
+
+        .btn-cta:hover {
+          background: #008a4d;
+          box-shadow: 0 4px 12px rgba(0, 168, 89, 0.3);
+          transform: translateY(-2px);
+          color: #fff;
+        }
+
+        /* Footer */
+        footer {
+          background: var(--dark);
+          color: rgba(255,255,255,0.7);
+          padding: 2rem 1rem;
+          text-align: center;
+          font-size: 0.9rem;
+        }
+
+        footer a { color: var(--primary); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* Offcanvas mobile menu */
+        .offcanvas { background: #fff; }
+        .offcanvas-header { border-bottom: 1px solid var(--border); }
+        .offcanvas .nav-link { color: var(--text); font-weight: 500; }
+        .offcanvas .nav-link:hover { color: var(--primary); }
+
+        /* Responsive */
         @media (max-width: 991.98px) {
-          .wp-nav { display: none; }
+          header.hero { padding: 3.5rem 1rem; }
+          .hero-cta { flex-direction: column; }
+          .btn-hero { width: 100%; text-align: center; }
+          .cta-section { padding: 2rem 1.5rem; }
+        }
+
+        @media (max-width: 575.98px) {
+          .hero-title { font-size: 1.75rem; }
+          .hero-lead { font-size: 1rem; }
+          main { padding: 2rem 0.75rem; }
+          .card-like { padding: 1.5rem; }
         }
       `}</style>
 
-      <nav className="navbar wp-navbar container-fluid">
-        <div className="container d-flex align-items-center justify-content-between">
-          <div className="d-flex align-items-center">
-            <a
-              className="navbar-brand wp-brand d-flex align-items-center"
-              href="/"
+      {/* Navbar */}
+      <nav className="navbar site-navbar">
+        <div className="container">
+          <a className="navbar-brand site-brand" href="/">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              aria-hidden
+              focusable="false"
             >
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                aria-hidden="true"
-                focusable="false"
-                style={{ marginRight: 8 }}
+              <rect width="32" height="32" rx="6" fill="var(--primary)"></rect>
+              <text
+                x="50%"
+                y="50%"
+                textAnchor="middle"
+                fill="#fff"
+                dy=".35em"
+                fontWeight="700"
+                fontSize="18"
               >
-                <circle cx="18" cy="18" r="18" fill="var(--wp-blue)"></circle>
-                <text
-                  x="50%"
-                  y="50%"
-                  textAnchor="middle"
-                  fill="#fff"
-                  dy=".35em"
-                  fontWeight="700"
-                  fontSize="18"
-                >
-                  P
-                </text>
-              </svg>
-              <div>
-                Pro Hub <div className="wp-sub">Design · Build · Ship</div>
-              </div>
+                P
+              </text>
+            </svg>
+            Pro Hub
+          </a>
+
+          {/* Desktop nav */}
+          <div className="d-none d-lg-flex align-items-center ms-auto gap-2">
+            <a className="nav-link" href="#">
+              Home
             </a>
+            <a className="nav-link" href="#">
+              Features
+            </a>
+            <a className="nav-link" href="#">
+              Pricing
+            </a>
+            <a className="nav-link" href="#">
+              Docs
+            </a>
+            <button className="btn btn-primary-nav">Get Started</button>
           </div>
 
-          <div className="d-flex align-items-center">
-            <div className="me-3 wp-nav">
-              <a className="nav-link d-inline-block" href="#">
-                Home
-              </a>
-              <a className="nav-link d-inline-block" href="#">
-                Features
-              </a>
-              <a className="nav-link d-inline-block" href="#">
-                Docs
-              </a>
-            </div>
-
-            <button
-              className="btn btn-sm me-2 wp-hamburger"
-              aria-expanded={open}
-              aria-label="Open menu"
-              onClick={() => setOpen(true)}
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
-
-            <a className="wp-cta" href="#">
-              Get Pro Hub
-            </a>
-          </div>
+          {/* Mobile menu button */}
+          <button
+            className="btn btn-outline-primary d-lg-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
         </div>
       </nav>
 
-      {/* Fullscreen overlay styled like WordPress hero/menu */}
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-label="Pro Hub menu"
-        className={`wp-overlay ${open ? "" : "hidden"}`}
-      >
-        <button
-          className="close-btn"
-          aria-label="Close menu"
-          onClick={() => setOpen(false)}
-        >
-          &times;
-        </button>
+      {/* Hero Section */}
+      <header className="hero">
+        <div className="container">
+          <div className="row align-items-center g-4">
+            <div className="col-12 col-lg-6 hero-content">
+              <h1 className="hero-title">
+                Learn Coding <br /> Without Limits
+              </h1>
+              <p className="hero-lead">
+                Everything you need to master programming — from beginner to
+                expert level. Start your journey today.
+              </p>
 
-        <h1>Powerful, Flexible, Open</h1>
-        <p className="lead">
-          A professional toolkit for building modern websites — fast, secure,
-          and scalable.
-        </p>
+              <div className="hero-cta">
+                <button className="btn btn-hero btn-hero-primary">
+                  Get Started Free
+                </button>
+                <button className="btn btn-hero btn-hero-secondary">
+                  Watch Demo
+                </button>
+              </div>
 
-        <div className="wp-links" role="navigation" aria-label="Primary">
-          <a className="wp-link" href="#">
-            Get Started
-          </a>
-          <a className="wp-link" href="#">
-            Download
-          </a>
-          <a className="wp-link" href="#">
-            Extensions
-          </a>
-          <a className="wp-link" href="#">
-            Showcase
-          </a>
-        </div>
+              <p className="trust-badge">
+                ✓ Trusted by 800+ Students Worldwide
+              </p>
+            </div>
 
-        <form
-          className="wp-search"
-          role="search"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <div className="input-group">
-            <input
-              className="form-control form-control-lg"
-              type="search"
-              placeholder="Search Pro Hub"
-              aria-label="Search Pro Hub"
-            />
-            <button className="btn btn-light btn-lg" type="submit">
-              Search
-            </button>
+            <div className="col-12 col-lg-6 d-flex justify-content-center">
+              <img
+                src="pics/note-hand.jpg"
+                alt="learning illustration"
+                className="hero-img"
+              />
+            </div>
           </div>
-        </form>
+        </div>
+      </header>
+
+      {/* Mobile menu */}
+      <div
+        className="offcanvas offcanvas-fullscreen d-lg-none"
+        tabIndex="-1"
+        id="mobileMenu"
+        aria-label="Navigation menu"
+      >
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title">Menu</h5>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="offcanvas"
+          ></button>
+        </div>
+        <div className="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+          <nav className="nav flex-column text-center w-100">
+            <a className="nav-link fs-4 py-3" href="#">
+              Home
+            </a>
+            <a className="nav-link fs-4 py-3" href="#">
+              Features
+            </a>
+            <a className="nav-link fs-4 py-3" href="#">
+              Pricing
+            </a>
+            <a className="nav-link fs-4 py-3" href="#">
+              Docs
+            </a>
+          </nav>
+          <button className="btn btn-primary-nav mt-4 w-auto">
+            Get Started
+          </button>
+        </div>
       </div>
-    </header>
+
+      {/* Main Content */}
+      <main>
+        <div className="container">
+          <h2 className="section-title">Learn With The Best</h2>
+          <p className="section-lead">
+            We provide a professional environment focused on your success.
+            Expert instructors, curated curriculum, and real-world projects.
+          </p>
+
+          <div className="row g-4 mb-4">
+            <div className="col-12 col-md-6">
+              <div className="card-like">
+                <h4>📚 Structured Curriculum</h4>
+                <p>
+                  Follow a carefully designed path from fundamentals to advanced
+                  concepts.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-12 col-md-6">
+              <div className="card-like">
+                <h4>👨‍🏫 Expert Mentorship</h4>
+                <p>
+                  Get guidance from experienced developers who understand your
+                  challenges.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="cta-section">
+            <h3>Build Your Future</h3>
+            <p>
+              Join thousands of students transforming their careers through
+              quality education.
+            </p>
+            <button className="btn btn-cta">Apply Now →</button>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer>
+        &copy; {new Date().getFullYear()} Pro Hub. All rights reserved. |{" "}
+        <a href="#">Privacy</a> • <a href="#">Terms</a>
+      </footer>
+    </div>
   );
 }
 

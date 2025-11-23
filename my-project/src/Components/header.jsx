@@ -679,7 +679,7 @@ function Header() {
               </text>
             </svg>
             {/* Brand text */}
-            Pro Hub
+            Programmers Hub Bukasa
           </a>
 
           {/* Desktop Navigation - Hidden on tablets and below */}
@@ -818,40 +818,39 @@ function Header() {
             {/* Left column - Text Content */}
             <div className="col-12 col-lg-6 hero-content">
               {/* Main Hero Title */}
-              <h1 className="hero-title">
-                Learn Coding <br /> Without Limits
-              </h1>
+              <h1 className="hero-title">Build . Learn . Code . Reapeat</h1>
 
               {/* Hero Subtitle/Lead Text */}
               <p className="hero-lead">
-                Everything you need to master programming — from beginner to
-                expert level. Start your journey today.
+                Join the Ultimate hub for passionate programmers, __resorces ,
+                mentorship and projects in one place .
               </p>
 
               {/* CTA Buttons Container */}
               <div className="hero-cta">
                 {/* Primary CTA - White button */}
                 <button className="btn btn-hero btn-hero-primary">
-                  Get Started Free
+                  Contact Us
                 </button>
 
                 {/* Secondary CTA - Transparent button */}
                 <button className="btn btn-hero btn-hero-secondary">
-                  Watch Demo
+                  Learn More
                 </button>
               </div>
 
               {/* Trust badge showing social proof */}
               <p className="trust-badge">
-                ✓ Trusted by 800+ Students Worldwide
-              </p>
+                ✓ Secure . Transparent . Community-Driven
+              </p><br />
+              <p className="trust-badge">Your In Good Hands</p>
             </div>
 
             {/* Right column - Hero Image */}
             <div className="col-12 col-lg-6 d-flex justify-content-center align-items-center">
               {/* Hero image with responsive sizing */}
               <img
-                src="./note-hand.jpg"
+                src="https://media.istockphoto.com/id/1344416095/photo/software-development.jpg?s=1024x1024&w=is&k=20&c=5j5Fl5NYIKc2cX5v45eMB5_TEGdsaX1qfTuJDTX9FJQ="
                 alt="learning illustration"
                 className="hero-img"
               />

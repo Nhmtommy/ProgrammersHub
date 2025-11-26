@@ -184,7 +184,7 @@ const Footer = () => {
             {/* Company title with primary color */}
             <h5 className="text-primary mb-3">
               <i className="fas fa-code me-2"></i>
-              Programmers Hub
+              Programmers Hub <sub>Bukasa</sub>
             </h5>
 
             {/* Company description */}

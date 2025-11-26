@@ -185,21 +185,6 @@ function Header() {
           margin: 0;
         }
 
-        /* ========== MID SECTION STYLING ========== */
-        /* Section between hero and services with gradient background */
-        .mid-sec {
-          background: linear-gradient(135deg, #ffffffff 0%, #ffffff 100%);
-          color: #fff;
-          height: auto;
-          width: 100%;
-          align-items: center;
-          justify-content: center;
-          padding: 60px 1.5rem;
-          position: relative;
-          overflow: hidden;
-          margin: 0;
-        }
-
         /* Top right floating circle background element */
         header.hero::before {
           content: '';
@@ -445,6 +430,21 @@ function Header() {
           text-decoration: none;
         }
 
+        /* ========== MID SECTION STYLING ========== */
+        /* Section between hero and services with gradient background */
+        .mid-sec {
+          background: linear-gradient(135deg, #ffffffff 0%, #ffffff 100%);
+          color: #fff;
+          height: auto;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          padding: 60px 1.5rem;
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+        }
+
         /* ========== MID SECTION CARDS CONTAINER ========== */
         /* Grid layout for cards in mid section */
         .mid-sec-cards {
@@ -452,6 +452,100 @@ function Header() {
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
           gap: 2rem;
           margin-top: 2rem;
+        }
+
+        /* ========== STATS SECTION STYLING ========== */
+        /* Section showcasing key statistics and highlights */
+        .stats-section {
+          background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+          padding: 60px 1.5rem;
+          color: #fff !important;
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* Stats container grid */
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 2rem;
+          margin-top: 2rem;
+        }
+
+        /* Individual stat item */
+        .stat-item {
+          text-align: center;
+          transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+          transform: translateY(-4px);
+        }
+
+        /* Stat number styling */
+        .stat-number {
+          font-size: 2.5rem;
+          font-weight: 800;
+          color: #fff;
+          margin-bottom: 0.5rem;
+        }
+
+        /* Stat label styling */
+        .stat-label {
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.9);
+          font-weight: 600;
+        }
+
+        /* ========== CTA SECTION STYLING ========== */
+        /* Call-to-action section for recruitment */
+        .cta-section {
+          background: linear-gradient(135deg, rgba(0, 102, 204, 0.1) 0%, rgba(61, 142, 255, 0.05) 100%);
+          border: 2px solid var(--border);
+          border-radius: 16px;
+          padding: 3rem 2rem;
+          text-align: center;
+          margin: 3rem 0;
+        }
+
+        /* CTA title */
+        .cta-section h3 {
+          color: var(--dark);
+          font-weight: 700;
+          font-size: 1.8rem;
+          margin-bottom: 1rem;
+        }
+
+        /* CTA description */
+        .cta-section p {
+          color: var(--muted);
+          font-size: 1rem;
+          margin-bottom: 2rem;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        /* CTA button styling */
+        .cta-btn {
+          background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+          color: #fff;
+          border: 0;
+          border-radius: 8px;
+          padding: 0.9rem 2.5rem;
+          font-weight: 700;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+        }
+
+        .cta-btn:hover {
+          background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+          transform: translateY(-3px);
+          box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+          color: #fff;
+          text-decoration: none;
         }
 
         /* ========== MOBILE MENU OVERLAY ========== */
@@ -676,6 +770,7 @@ function Header() {
           .btn-hero { width: 100%; text-align: center; padding: 0.9rem 1.75rem; }
           header.hero { padding: 120px 1.25rem 1.5rem 1.25rem; }
           .mid-sec-cards { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+          .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         /* Medium tablet (max-width: 767.98px) */
@@ -731,6 +826,8 @@ function Header() {
           .site-navbar { padding: 0.75rem 0; }
           .mid-sec-cards { grid-template-columns: 1fr; }
           .phb-card { padding: 1.5rem; }
+          .stats-grid { grid-template-columns: repeat(2, 1fr); }
+          .cta-section { padding: 2rem 1.5rem; }
         }
 
         /* Small mobile (max-width: 575.98px) */
@@ -741,7 +838,7 @@ function Header() {
           }
 
           .hero-title {
-            font-size: 1.75rem;
+            font-size: 5rem;
             margin-bottom: 1rem;
             font-weight: 800;
           }
@@ -753,7 +850,7 @@ function Header() {
           }
 
           .hero-lead {
-            font-size: 0.9rem;
+            font-size: 1.4rem;
             margin-bottom: 1.5rem;
             line-height: 1.6;
             font-weight: 300;
@@ -774,6 +871,11 @@ function Header() {
           .phb-card { padding: 1.25rem; }
           .phb-card-title { font-size: 1.1rem; }
           .phb-card-description { font-size: 0.85rem; }
+          .stats-section { padding: 40px 1rem; }
+          .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
+          .stat-number { font-size: 2rem; }
+          .cta-section { padding: 1.5rem 1rem; }
+          .cta-section h3 { font-size: 1.3rem; }
         }
       `}</style>
 
@@ -819,23 +921,23 @@ function Header() {
               </text>
             </svg>
             {/* Brand text */}
-            Programmers Hub Bukasa
+            Programmer's Hub <br /> <sub>Bukasa</sub>
           </a>
 
           {/* Desktop Navigation - Hidden on tablets and below */}
           <div className="d-none d-lg-flex align-items-center ms-auto gap-4">
             {/* Navigation Links */}
-            <a className="nav-link" href="#">
-              Home
+            <a className="nav-link" href="#courses">
+              Courses
             </a>
-            <a className="nav-link" href="#">
-              Services
+            <a className="nav-link" href="#community">
+              Community
             </a>
-            <a className="nav-link" href="#">
-              About Us
+            <a className="nav-link" href="#about">
+              About
             </a>
-            <a className="nav-link" href="#">
-              Location
+            <a className="nav-link" href="#contact">
+              Contact
             </a>
 
             {/* Visual Separator between nav links and CTA button */}
@@ -849,7 +951,7 @@ function Header() {
             ></div>
 
             {/* Primary CTA Button */}
-            <button className="btn btn-primary-nav">Join Us</button>
+            <button className="btn btn-primary-nav">Get Started</button>
           </div>
 
           {/* Mobile Hamburger Menu Button - Visible only on tablets and below */}
@@ -895,19 +997,19 @@ function Header() {
         <div className="mobile-menu-body">
           {/* Main Navigation Section */}
           <div className="mobile-menu-section">
-            <div className="mobile-menu-section-title">Main Navigation</div>
+            <div className="mobile-menu-section-title">Navigation</div>
             <nav className="mobile-nav">
-              <a href="#" onClick={() => setMenuOpen(false)}>
-                Home
+              <a href="#courses" onClick={() => setMenuOpen(false)}>
+                Explore Courses
               </a>
-              <a href="#" onClick={() => setMenuOpen(false)}>
-                Services
+              <a href="#community" onClick={() => setMenuOpen(false)}>
+                Join Community
               </a>
-              <a href="#" onClick={() => setMenuOpen(false)}>
-                About Us
+              <a href="#about" onClick={() => setMenuOpen(false)}>
+                About Pro Hub
               </a>
-              <a href="#" onClick={() => setMenuOpen(false)}>
-                Location
+              <a href="#contact" onClick={() => setMenuOpen(false)}>
+                Get in Touch
               </a>
             </nav>
           </div>
@@ -916,14 +1018,14 @@ function Header() {
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Resources</div>
             <nav className="mobile-nav">
-              <a href="#" onClick={() => setMenuOpen(false)}>
-                Blog
+              <a href="#blog" onClick={() => setMenuOpen(false)}>
+                Blog & Articles
               </a>
-              <a href="#" onClick={() => setMenuOpen(false)}>
-                Community
+              <a href="#events" onClick={() => setMenuOpen(false)}>
+                Events
               </a>
-              <a href="#" onClick={() => setMenuOpen(false)}>
-                Support
+              <a href="#faq" onClick={() => setMenuOpen(false)}>
+                FAQ
               </a>
             </nav>
           </div>
@@ -932,7 +1034,7 @@ function Header() {
         {/* Menu Footer with CTA and Version Info */}
         <div className="mobile-menu-footer">
           {/* Primary CTA Button */}
-          <button className="btn btn-primary-nav">Join Us Today</button>
+          <button className="btn btn-primary-nav">Get Started Today</button>
           {/* Version Info */}
           <p
             style={{
@@ -944,7 +1046,7 @@ function Header() {
               letterSpacing: "0.05em",
             }}
           >
-            PROGRAMMERS HUB BUKASA v1.0.0
+            PRO HUB v1.0.0
           </p>
         </div>
       </div>
@@ -957,28 +1059,36 @@ function Header() {
           <div className="row align-items-center g-5 h-100">
             {/* Left column - Text Content */}
             <div className="col-12 col-lg-6 hero-content">
-              {/* Main Hero Subtitle */}
-              <h2 className="hero-title2">Life Is About Programming</h2>
-
               {/* Main Hero Title */}
-              <h1 className="hero-title">Build . Learn . Code . Repeat</h1>
+              <h1 className="hero-title">
+                Build. Learn. <br />
+                Code. Repeat.
+              </h1>
 
-              {/* Hero Subtitle/Lead Text */}
+              {/* Hero Subtitle/Lead Text - More natural and startup-focused */}
               <p className="hero-lead">
-                Join the Ultimate hub for passionate programmers -- a vibrant
-                community where you gain access to powerful resources, hands-on
-                mentorship, real world projects, and opportunities to grow.
-                Whether you're just starting out or sharpening your skills this
-                is your space to learn, build, and thrive -- all in one place
+                Join a vibrant community of passionate programmers. Learn from
+                real-world projects, get mentored by industry professionals, and
+                launch your coding career—all in one place.
               </p>
 
               {/* CTA Buttons Container */}
               <div className="hero-cta">
-                {/* Primary CTA - White button */}
-                <button className="btn btn-hero btn-hero-primary w-50">
-                  Contact Us
+                {/* Primary CTA - Explore Courses */}
+                <button className="btn btn-hero btn-hero-primary">
+                  Learn More
+                </button>
+
+                {/* Secondary CTA - Join Community */}
+                <button className="btn btn-hero btn-hero-secondary">
+                  Join Community
                 </button>
               </div>
+
+              {/* Trust badge showing social proof */}
+              <p className="trust-badge">
+                ✓ Join students building amazing projects
+              </p>
             </div>
 
             {/* Right column - Hero Image */}
@@ -993,9 +1103,100 @@ function Header() {
           </div>
         </div>
       </header>
+      <hr  />
 
-      {/* ==================== MID SECTION - ACHIEVEMENTS/ACCOMPLISHMENTS ==================== */}
-      {/* Section highlighting what Programmers Hub Bukasa has achieved */}
+      {/* ==================== STATS SECTION ==================== */}
+      {/* Section showcasing key achievements and community growth */}
+      <section className="stats-section">
+        <div className="container">
+          {/* Section Header */}
+          <div className="row mb-4">
+            <div className="col">
+              {/* Section title */}
+              <h2 className="display-6 fw-bold text-center">
+                Programmer's Hub By The Numbers
+              </h2>
+              {/* Section subtitle */}
+              <p
+                className="text-center"
+                style={{
+                  fontSize: "1.05rem",
+                  color: "rgba(255, 255, 255, 0.9)",
+                }}
+              >
+                A growing community of begginers to adavanced developers
+                achieving real results
+              </p>
+            </div>
+          </div>
+
+          {/* Statistics Grid */}
+          <div className="stats-grid">
+            {/* Stat 1: Active Members */}
+            <div className="stat-item">
+              <div className="stat-number">50+</div>
+              <div className="stat-label">Reach Outs</div>
+              <p
+                style={{
+                  fontSize: "0.85rem",
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "0.5rem",
+                }}
+              >
+                Growing daily
+              </p>
+            </div>
+
+            {/* Stat 2: Courses Available */}
+            <div className="stat-item">
+              <div className="stat-number">5+</div>
+              <div className="stat-label">Core Courses</div>
+              <p
+                style={{
+                  fontSize: "0.85rem",
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "0.5rem",
+                }}
+              >
+                Expert-led programs
+              </p>
+            </div>
+
+            {/* Stat 3: Projects Built */}
+            <div className="stat-item">
+              <div className="stat-number">10+</div>
+              <div className="stat-label">Projects Completed</div>
+              <p
+                style={{
+                  fontSize: "0.85rem",
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "0.5rem",
+                }}
+              >
+                Real-world experience
+              </p>
+            </div>
+
+            {/* Stat 4: Success Rate */}
+            <div className="stat-item">
+              <div className="stat-number">99.9%</div>
+              <div className="stat-label">Completion Rate</div>
+              <p
+                style={{
+                  fontSize: "0.85rem",
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "0.5rem",
+                }}
+              >
+                Dedicated learners
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== MID SECTION - KEY FEATURES ==================== */}
+      {/* Section highlighting core value propositions */}
       <section className="mid-sec">
         <div className="container">
           {/* Section Header */}
@@ -1003,124 +1204,140 @@ function Header() {
             <div className="col">
               {/* Section title */}
               <h2 className="display-6 fw-bold text-center text-dark">
-                What We've Accomplished
+                Why Choose Programmers Hub <sub>Bukasa</sub>?
               </h2>
               {/* Section subtitle */}
               <p className="text-muted text-center fs-5">
-                Discover the achievements and impact of Programmers Hub Bukasa
+                Everything you need to start and advance your programming
+                journey
               </p>
             </div>
           </div>
 
-          {/* Cards Grid Container */}
+          {/* Features Cards Grid Container */}
           <div className="mid-sec-cards">
-            {/* ========== CARD 1: STUDENTS TRAINED ========== */}
+            {/* ========== CARD 1: EXPERT-LED COURSES ========== */}
             <div className="phb-card">
               {/* Card Icon */}
-              <div className="phb-card-icon">👨‍🎓</div>
+              <div className="phb-card-icon">👨‍🏫</div>
 
               {/* Card Title */}
-              <h3 className="phb-card-title">500+ Students Trained</h3>
+              <h3 className="phb-card-title">Expert-Led Courses</h3>
 
               {/* Card Description */}
               <p className="phb-card-description">
-                We've successfully trained over 500 passionate programmers,
-                helping them transform their careers and achieve their goals.
+                Learn from experienced developers who share real-world insights,
+                best practices, and industry secrets.
               </p>
 
               {/* Card Features List */}
               <ul className="phb-card-features">
-                <li>Comprehensive curriculum</li>
-                <li>Expert instructors</li>
-                <li>Career support</li>
+                <li>Structured curriculum</li>
+                <li>Hands-on projects</li>
+                <li>Code reviews & feedback</li>
               </ul>
 
               {/* Card Button */}
-              <button className="phb-card-btn">Learn More</button>
             </div>
 
-            {/* ========== CARD 2: PROJECTS COMPLETED ========== */}
-            <div className="phb-card">
-              {/* Card Icon */}
-              <div className="phb-card-icon">🏗️</div>
-
-              {/* Card Title */}
-              <h3 className="phb-card-title">1000+ Projects Completed</h3>
-
-              {/* Card Description */}
-              <p className="phb-card-description">
-                From web applications to mobile solutions, our students have
-                delivered over 1000 real-world projects for clients.
-              </p>
-
-              {/* Card Features List */}
-              <ul className="phb-card-features">
-                <li>Real-world experience</li>
-                <li>Portfolio building</li>
-                <li>Client collaboration</li>
-              </ul>
-
-              {/* Card Button */}
-              <button className="phb-card-btn">View Portfolio</button>
-            </div>
-
-            {/* ========== CARD 3: PARTNERSHIPS ========== */}
+            {/* ========== CARD 2: VIBRANT COMMUNITY ========== */}
             <div className="phb-card">
               {/* Card Icon */}
               <div className="phb-card-icon">🤝</div>
 
               {/* Card Title */}
-              <h3 className="phb-card-title">50+ Industry Partnerships</h3>
+              <h3 className="phb-card-title">Vibrant Community</h3>
 
               {/* Card Description */}
               <p className="phb-card-description">
-                We've established partnerships with leading tech companies to
-                provide internships, job placements, and growth opportunities.
+                Connect with fellow programmers, collaborate on projects, share
+                knowledge, and grow together.
               </p>
 
               {/* Card Features List */}
               <ul className="phb-card-features">
-                <li>Job placement assistance</li>
-                <li>Internship programs</li>
-                <li>Industry connections</li>
+                <li>Active discussions</li>
+                <li>Project collaboration</li>
+                <li>Networking opportunities</li>
               </ul>
 
               {/* Card Button */}
-              <button className="phb-card-btn">Join Now</button>
             </div>
 
-            {/* ========== CARD 6: CONTINUOUS INNOVATION ========== */}
+            {/* ========== CARD 3: REAL-WORLD PROJECTS ========== */}
             <div className="phb-card">
               {/* Card Icon */}
-              <div className="phb-card-icon">💡</div>
+              <div className="phb-card-icon">🚀</div>
 
               {/* Card Title */}
-              <h3 className="phb-card-title">Continuous Innovation</h3>
+              <h3 className="phb-card-title">Real-World Projects</h3>
 
               {/* Card Description */}
               <p className="phb-card-description">
-                We constantly update our curriculum and teaching methods to stay
-                ahead of technology trends and industry demands.
+                Build portfolio-worthy projects from day one. Gain practical
+                experience that employers love.
               </p>
 
               {/* Card Features List */}
               <ul className="phb-card-features">
-                <li>Latest technologies</li>
-                <li>Modern practices</li>
-                <li>Future-ready skills</li>
+                <li>Guided projects</li>
+                <li>Portfolio building</li>
+                <li>Industry-standard tools</li>
               </ul>
 
               {/* Card Button */}
-              <button className="phb-card-btn">Explore</button>
+            </div>
+
+            {/* ========== CARD 4: CAREER SUPPORT ========== */}
+            <div className="phb-card">
+              {/* Card Icon */}
+              <div className="phb-card-icon">📈</div>
+
+              {/* Card Title */}
+              <h3 className="phb-card-title">Career Support</h3>
+
+              {/* Card Description */}
+              <p className="phb-card-description">
+                Get guidance for your career journey. Access job opportunities,
+                interview prep, and networking.
+              </p>
+
+              {/* Card Features List */}
+              <ul className="phb-card-features">
+                <li>Job board access</li>
+                <li>Interview prep</li>
+                <li>Mentorship programs</li>
+              </ul>
+
+              {/* Card Button */}
             </div>
           </div>
         </div>
       </section>
 
       {/* ==================== HORIZONTAL SCROLL SERVICES SECTION ==================== */}
-      {/* Section for scrollable service cards */}
-      <section>
+      {/* Section for scrollable service/course cards */}
+      <section id="courses">
         <HorizontalScrollCards />
+      </section>
+
+      {/* ==================== CTA SECTION ==================== */}
+      {/* Call-to-action section for recruitment */}
+      <section className="container">
+        <div className="cta-section">
+          {/* CTA Title */}
+          <h3>Ready to Start Your Coding Journey?</h3>
+
+          {/* CTA Description */}
+          <p>
+            Join Pro Hub today and become part of a thriving community of
+            developers. Whether you're a complete beginner or looking to level
+            up, we have the perfect course for you.
+          </p>
+
+          {/* CTA Button */}
+          <button className="cta-btn">Get Started Now</button>
+        </div>
       </section>
 
       {/* ==================== FOOTER SECTION ==================== */}

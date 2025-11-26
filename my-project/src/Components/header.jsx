@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import HorizontalScrollCards from "./auto scroll";
+import Footer from "./footer";
 
 function Header() {
+  // ==================== STATE MANAGEMENT ====================
   // State to manage mobile menu open/close
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -182,6 +185,21 @@ function Header() {
           margin: 0;
         }
 
+        /* ========== MID SECTION STYLING ========== */
+        /* Section between hero and services with gradient background */
+        .mid-sec {
+          background: linear-gradient(135deg, #ffffffff 0%, #ffffff 100%);
+          color: #fff;
+          height: auto;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          padding: 60px 1.5rem;
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+        }
+
         /* Top right floating circle background element */
         header.hero::before {
           content: '';
@@ -327,6 +345,113 @@ function Header() {
           display: inline-block;
           backdrop-filter: blur(10px);
           border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* ========== PROFESSIONAL CARD STYLING ========== */
+        /* Card container with professional styling aligned with website theme */
+        .phb-card {
+          background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          padding: 2rem 1.5rem;
+          height: 100%;
+          transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+          box-shadow: 0 4px 15px rgba(0, 102, 204, 0.08);
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* Card hover effect - lift and enhanced shadow */
+        .phb-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 12px 35px rgba(0, 102, 204, 0.2);
+          border-color: var(--primary);
+        }
+
+        /* Card icon styling with gradient background */
+        .phb-card-icon {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+          background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        /* Card title styling */
+        .phb-card-title {
+          color: var(--dark);
+          font-weight: 700;
+          font-size: 1.3rem;
+          margin-bottom: 0.75rem;
+          letter-spacing: -0.01em;
+        }
+
+        /* Card description text */
+        .phb-card-description {
+          color: var(--muted);
+          font-size: 0.95rem;
+          line-height: 1.6;
+          margin-bottom: 1.25rem;
+        }
+
+        /* Card features list styling */
+        .phb-card-features {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        /* Individual feature item */
+        .phb-card-features li {
+          color: var(--text);
+          font-size: 0.9rem;
+          padding: 0.4rem 0;
+          padding-left: 1.5rem;
+          position: relative;
+        }
+
+        /* Feature checkmark styling */
+        .phb-card-features li::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: var(--primary);
+          font-weight: 700;
+          font-size: 1.1rem;
+        }
+
+        /* Card button styling */
+        .phb-card-btn {
+          background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+          color: #fff;
+          border: 0;
+          border-radius: 8px;
+          padding: 0.7rem 1.5rem;
+          font-weight: 600;
+          font-size: 0.9rem;
+          margin-top: 1rem;
+          transition: all 0.2s ease;
+          box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+          cursor: pointer;
+        }
+
+        /* Button hover effect */
+        .phb-card-btn:hover {
+          background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(0, 102, 204, 0.3);
+          color: #fff;
+          text-decoration: none;
+        }
+
+        /* ========== MID SECTION CARDS CONTAINER ========== */
+        /* Grid layout for cards in mid section */
+        .mid-sec-cards {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 2rem;
+          margin-top: 2rem;
         }
 
         /* ========== MOBILE MENU OVERLAY ========== */
@@ -550,6 +675,7 @@ function Header() {
           .hero-cta { flex-direction: column; margin-bottom: 2.5rem; }
           .btn-hero { width: 100%; text-align: center; padding: 0.9rem 1.75rem; }
           header.hero { padding: 120px 1.25rem 1.5rem 1.25rem; }
+          .mid-sec-cards { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
         }
 
         /* Medium tablet (max-width: 767.98px) */
@@ -603,6 +729,8 @@ function Header() {
           .mobile-menu-footer { padding: 1.75rem 1.25rem; }
           .mobile-nav a { padding: 1rem 0.9rem; }
           .site-navbar { padding: 0.75rem 0; }
+          .mid-sec-cards { grid-template-columns: 1fr; }
+          .phb-card { padding: 1.5rem; }
         }
 
         /* Small mobile (max-width: 575.98px) */
@@ -618,10 +746,17 @@ function Header() {
             font-weight: 800;
           }
 
+          .hero-title2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+          }
+
           .hero-lead {
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
             line-height: 1.6;
+            font-weight: 300;
           }
 
           .btn-hero {
@@ -634,6 +769,11 @@ function Header() {
           .mobile-nav a { padding: 0.95rem 0.8rem; font-size: 0.9rem; }
           .mobile-menu-section-title { font-size: 0.75rem; padding-left: 0.8rem; }
           .trust-badge { font-size: 0.85rem; padding: 0.65rem 1.25rem; }
+          .mid-sec { padding: 40px 1rem; }
+          .mid-sec-cards { grid-template-columns: 1fr; gap: 1rem; }
+          .phb-card { padding: 1.25rem; }
+          .phb-card-title { font-size: 1.1rem; }
+          .phb-card-description { font-size: 0.85rem; }
         }
       `}</style>
 
@@ -689,13 +829,13 @@ function Header() {
               Home
             </a>
             <a className="nav-link" href="#">
-              Features
+              Services
             </a>
             <a className="nav-link" href="#">
-              Pricing
+              About Us
             </a>
             <a className="nav-link" href="#">
-              Docs
+              Location
             </a>
 
             {/* Visual Separator between nav links and CTA button */}
@@ -709,7 +849,7 @@ function Header() {
             ></div>
 
             {/* Primary CTA Button */}
-            <button className="btn btn-primary-nav">Get Started</button>
+            <button className="btn btn-primary-nav">Join Us</button>
           </div>
 
           {/* Mobile Hamburger Menu Button - Visible only on tablets and below */}
@@ -761,13 +901,13 @@ function Header() {
                 Home
               </a>
               <a href="#" onClick={() => setMenuOpen(false)}>
-                Features
+                Services
               </a>
               <a href="#" onClick={() => setMenuOpen(false)}>
-                Pricing
+                About Us
               </a>
               <a href="#" onClick={() => setMenuOpen(false)}>
-                Docs
+                Location
               </a>
             </nav>
           </div>
@@ -792,7 +932,7 @@ function Header() {
         {/* Menu Footer with CTA and Version Info */}
         <div className="mobile-menu-footer">
           {/* Primary CTA Button */}
-          <button className="btn btn-primary-nav">Get Started Free</button>
+          <button className="btn btn-primary-nav">Join Us Today</button>
           {/* Version Info */}
           <p
             style={{
@@ -804,7 +944,7 @@ function Header() {
               letterSpacing: "0.05em",
             }}
           >
-            PRO HUB v1.0.0
+            PROGRAMMERS HUB BUKASA v1.0.0
           </p>
         </div>
       </div>
@@ -817,33 +957,28 @@ function Header() {
           <div className="row align-items-center g-5 h-100">
             {/* Left column - Text Content */}
             <div className="col-12 col-lg-6 hero-content">
+              {/* Main Hero Subtitle */}
+              <h2 className="hero-title2">Life Is About Programming</h2>
+
               {/* Main Hero Title */}
-              <h1 className="hero-title">Build . Learn . Code . Reapeat</h1>
+              <h1 className="hero-title">Build . Learn . Code . Repeat</h1>
 
               {/* Hero Subtitle/Lead Text */}
               <p className="hero-lead">
-                Join the Ultimate hub for passionate programmers, __resorces ,
-                mentorship and projects in one place .
+                Join the Ultimate hub for passionate programmers -- a vibrant
+                community where you gain access to powerful resources, hands-on
+                mentorship, real world projects, and opportunities to grow.
+                Whether you're just starting out or sharpening your skills this
+                is your space to learn, build, and thrive -- all in one place
               </p>
 
               {/* CTA Buttons Container */}
               <div className="hero-cta">
                 {/* Primary CTA - White button */}
-                <button className="btn btn-hero btn-hero-primary">
+                <button className="btn btn-hero btn-hero-primary w-50">
                   Contact Us
                 </button>
-
-                {/* Secondary CTA - Transparent button */}
-                <button className="btn btn-hero btn-hero-secondary">
-                  Learn More
-                </button>
               </div>
-
-              {/* Trust badge showing social proof */}
-              <p className="trust-badge">
-                ✓ Secure . Transparent . Community-Driven
-              </p><br />
-              <p className="trust-badge">Your In Good Hands</p>
             </div>
 
             {/* Right column - Hero Image */}
@@ -851,13 +986,148 @@ function Header() {
               {/* Hero image with responsive sizing */}
               <img
                 src="https://media.istockphoto.com/id/1344416095/photo/software-development.jpg?s=1024x1024&w=is&k=20&c=5j5Fl5NYIKc2cX5v45eMB5_TEGdsaX1qfTuJDTX9FJQ="
-                alt="learning illustration"
+                alt="Software development illustration"
                 className="hero-img"
               />
             </div>
           </div>
         </div>
       </header>
+
+      {/* ==================== MID SECTION - ACHIEVEMENTS/ACCOMPLISHMENTS ==================== */}
+      {/* Section highlighting what Programmers Hub Bukasa has achieved */}
+      <section className="mid-sec">
+        <div className="container">
+          {/* Section Header */}
+          <div className="row mb-4">
+            <div className="col">
+              {/* Section title */}
+              <h2 className="display-6 fw-bold text-center text-dark">
+                What We've Accomplished
+              </h2>
+              {/* Section subtitle */}
+              <p className="text-muted text-center fs-5">
+                Discover the achievements and impact of Programmers Hub Bukasa
+              </p>
+            </div>
+          </div>
+
+          {/* Cards Grid Container */}
+          <div className="mid-sec-cards">
+            {/* ========== CARD 1: STUDENTS TRAINED ========== */}
+            <div className="phb-card">
+              {/* Card Icon */}
+              <div className="phb-card-icon">👨‍🎓</div>
+
+              {/* Card Title */}
+              <h3 className="phb-card-title">500+ Students Trained</h3>
+
+              {/* Card Description */}
+              <p className="phb-card-description">
+                We've successfully trained over 500 passionate programmers,
+                helping them transform their careers and achieve their goals.
+              </p>
+
+              {/* Card Features List */}
+              <ul className="phb-card-features">
+                <li>Comprehensive curriculum</li>
+                <li>Expert instructors</li>
+                <li>Career support</li>
+              </ul>
+
+              {/* Card Button */}
+              <button className="phb-card-btn">Learn More</button>
+            </div>
+
+            {/* ========== CARD 2: PROJECTS COMPLETED ========== */}
+            <div className="phb-card">
+              {/* Card Icon */}
+              <div className="phb-card-icon">🏗️</div>
+
+              {/* Card Title */}
+              <h3 className="phb-card-title">1000+ Projects Completed</h3>
+
+              {/* Card Description */}
+              <p className="phb-card-description">
+                From web applications to mobile solutions, our students have
+                delivered over 1000 real-world projects for clients.
+              </p>
+
+              {/* Card Features List */}
+              <ul className="phb-card-features">
+                <li>Real-world experience</li>
+                <li>Portfolio building</li>
+                <li>Client collaboration</li>
+              </ul>
+
+              {/* Card Button */}
+              <button className="phb-card-btn">View Portfolio</button>
+            </div>
+
+            {/* ========== CARD 3: PARTNERSHIPS ========== */}
+            <div className="phb-card">
+              {/* Card Icon */}
+              <div className="phb-card-icon">🤝</div>
+
+              {/* Card Title */}
+              <h3 className="phb-card-title">50+ Industry Partnerships</h3>
+
+              {/* Card Description */}
+              <p className="phb-card-description">
+                We've established partnerships with leading tech companies to
+                provide internships, job placements, and growth opportunities.
+              </p>
+
+              {/* Card Features List */}
+              <ul className="phb-card-features">
+                <li>Job placement assistance</li>
+                <li>Internship programs</li>
+                <li>Industry connections</li>
+              </ul>
+
+              {/* Card Button */}
+              <button className="phb-card-btn">Join Now</button>
+            </div>
+
+            {/* ========== CARD 6: CONTINUOUS INNOVATION ========== */}
+            <div className="phb-card">
+              {/* Card Icon */}
+              <div className="phb-card-icon">💡</div>
+
+              {/* Card Title */}
+              <h3 className="phb-card-title">Continuous Innovation</h3>
+
+              {/* Card Description */}
+              <p className="phb-card-description">
+                We constantly update our curriculum and teaching methods to stay
+                ahead of technology trends and industry demands.
+              </p>
+
+              {/* Card Features List */}
+              <ul className="phb-card-features">
+                <li>Latest technologies</li>
+                <li>Modern practices</li>
+                <li>Future-ready skills</li>
+              </ul>
+
+              {/* Card Button */}
+              <button className="phb-card-btn">Explore</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== HORIZONTAL SCROLL SERVICES SECTION ==================== */}
+      {/* Section for scrollable service cards */}
+      <section>
+        <HorizontalScrollCards />
+      </section>
+
+      {/* ==================== FOOTER SECTION ==================== */}
+      {/* Footer component */}
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

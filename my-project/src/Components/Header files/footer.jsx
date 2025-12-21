@@ -189,9 +189,9 @@ const Footer = () => {
 
             {/* Company description */}
             <p className="text-muted">
-              Your trusted partner for innovative software solutions. We deliver
-              cutting-edge development services to transform your ideas into
-              reality.
+              We deliver cutting-edge development services to transform your
+              ideas into reality. <br />
+              We mentor new programming students in there tech carrers.
             </p>
 
             {/* Social media links with hover effects */}
@@ -227,7 +227,7 @@ const Footer = () => {
               aria-expanded={openSections.services}
             >
               {/* Section title */}
-              <span className="text-uppercase fw-bold">Services</span>
+              <span className="text-uppercase fw-bold">Navigation</span>
               {/* Chevron icon that rotates on open */}
               <span
                 className={`dropdown-chevron ${
@@ -248,48 +248,41 @@ const Footer = () => {
                 {/* Web Development link */}
                 <li className="mb-2">
                   <a
-                    href="#"
+                    href="home"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    Web Development
+                    Home
                   </a>
                 </li>
                 {/* Mobile Apps link */}
                 <li className="mb-2">
                   <a
-                    href="#"
+                    href="about"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    Mobile Apps
+                    About Us
                   </a>
                 </li>
                 {/* Cloud Solutions link */}
                 <li className="mb-2">
                   <a
-                    href="#"
+                    href="courses"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    Cloud Solutions
+                    Courses
                   </a>
                 </li>
                 {/* DevOps link */}
                 <li className="mb-2">
                   <a
-                    href="#"
+                    href="about#team"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    DevOps
+                    Our Team
                   </a>
                 </li>
                 {/* UI/UX Design link */}
-                <li className="mb-2">
-                  <a
-                    href="#"
-                    className="text-muted text-decoration-none hover-text-primary"
-                  >
-                    UI/UX Design
-                  </a>
-                </li>
+                <li className="mb-2"></li>
               </ul>
             </div>
           </div>
@@ -330,7 +323,7 @@ const Footer = () => {
                     href="#"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    React & Node.js
+                    HTML and CSS
                   </a>
                 </li>
                 {/* Python & Django link */}
@@ -348,25 +341,17 @@ const Footer = () => {
                     href="#"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    AWS & Azure
+                    GoLang
                   </a>
                 </li>
-                {/* Docker & Kubernetes link */}
-                <li className="mb-2">
-                  <a
-                    href="#"
-                    className="text-muted text-decoration-none hover-text-primary"
-                  >
-                    Docker & Kubernetes
-                  </a>
-                </li>
+
                 {/* Machine Learning link */}
                 <li className="mb-2">
                   <a
                     href="#"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    Machine Learning
+                    Javascript & Next.js
                   </a>
                 </li>
               </ul>
@@ -439,71 +424,7 @@ const Footer = () => {
                     Community
                   </a>
                 </li>
-                {/* Help Center link */}
-                <li className="mb-2">
-                  <a
-                    href="#"
-                    className="text-muted text-decoration-none hover-text-primary"
-                  >
-                    Help Center
-                  </a>
-                </li>
               </ul>
-            </div>
-          </div>
-
-          {/* ========== NEWSLETTER SECTION ========== */}
-          {/* Desktop: Always visible | Mobile: Collapsible dropdown */}
-          <div className="col-lg-2 col-md-6 mb-4">
-            {/* Dropdown toggle button for mobile */}
-            <button
-              className={`dropdown-toggle-footer mb-3 ${
-                openSections.newsletter ? "active" : ""
-              }`}
-              onClick={() => toggleSection("newsletter")}
-              aria-expanded={openSections.newsletter}
-            >
-              {/* Section title */}
-              <span className="text-uppercase fw-bold">Newsletter</span>
-              {/* Chevron icon that rotates on open */}
-              <span
-                className={`dropdown-chevron ${
-                  openSections.newsletter ? "open" : ""
-                }`}
-              >
-                <i className="fas fa-chevron-down"></i>
-              </span>
-            </button>
-
-            {/* Dropdown content - shown on mobile when expanded */}
-            <div
-              className={`dropdown-content ${
-                openSections.newsletter ? "open" : ""
-              }`}
-            >
-              {/* Newsletter description */}
-              <p className="text-muted small mb-3">
-                Stay updated with our latest projects and tech insights.
-              </p>
-
-              {/* Email subscription input group */}
-              <div className="input-group input-group-sm">
-                {/* Email input field */}
-                <input
-                  type="email"
-                  className="form-control form-control-sm newsletter-input"
-                  placeholder="Your email"
-                  aria-label="Email address for newsletter"
-                />
-                {/* Submit button with icon */}
-                <button
-                  className="btn btn-sm btn-newsletter"
-                  type="button"
-                  aria-label="Subscribe to newsletter"
-                >
-                  <i className="fas fa-paper-plane"></i>
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -517,7 +438,8 @@ const Footer = () => {
           {/* Copyright notice - left aligned on desktop, full width on mobile */}
           <div className="col-md-6 mb-2 mb-md-0">
             <p className="text-muted mb-0">
-              &copy; {currentYear} Programmers Hub. All rights reserved.
+              &copy; {currentYear} Programmers Hub. All rights reserved. <br />
+              Developed with love by <a href="#">Kisuze Nahum</a>
             </p>
           </div>
 

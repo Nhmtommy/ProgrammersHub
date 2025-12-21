@@ -60,7 +60,7 @@ function Header() {
         .site-brand {
           color: var(--primary);
           font-weight: 700;
-          font-size: 1.35rem;
+          font-size: 1.1rem;
           letter-spacing: -0.015em;
           text-decoration: none;
           display: flex;
@@ -172,7 +172,7 @@ function Header() {
 
         /* ========== HERO SECTION STYLING ========== */
         header.hero {
-          background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+          background: linear-gradient(135deg, #0066cc 0%, #02284eff 100%);
           color: #fff;
           min-height: 100vh;
           width: 100%;
@@ -688,7 +688,7 @@ function Header() {
         /* Mobile nav hover effect with gradient background */
         .mobile-nav a:hover {
           background: linear-gradient(90deg, rgba(0, 102, 204, 0.1), transparent);
-          color: var(--primary);
+           color: var(--primary);
           padding-left: 1.35rem;
         }
 
@@ -838,7 +838,7 @@ function Header() {
           }
 
           .hero-title {
-            font-size: 5rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
             font-weight: 800;
           }
@@ -927,17 +927,18 @@ function Header() {
           {/* Desktop Navigation - Hidden on tablets and below */}
           <div className="d-none d-lg-flex align-items-center ms-auto gap-4">
             {/* Navigation Links */}
-            <a className="nav-link" href="#courses">
+            <a className="nav-link" href="courses">
               Courses
             </a>
-            <a className="nav-link" href="#community">
-              Community
+
+            <a className="nav-link" href="about">
+              About Us
             </a>
-            <a className="nav-link" href="#about">
-              About
+            <a className="nav-link" href="#">
+              Contact Us
             </a>
-            <a className="nav-link" href="#contact">
-              Contact
+            <a className="nav-link" href="#">
+              Services
             </a>
 
             {/* Visual Separator between nav links and CTA button */}
@@ -951,7 +952,7 @@ function Header() {
             ></div>
 
             {/* Primary CTA Button */}
-            <button className="btn btn-primary-nav">Get Started</button>
+            <button className="btn btn-primary-nav">Join Community</button>
           </div>
 
           {/* Mobile Hamburger Menu Button - Visible only on tablets and below */}
@@ -999,16 +1000,16 @@ function Header() {
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Navigation</div>
             <nav className="mobile-nav">
-              <a href="#courses" onClick={() => setMenuOpen(false)}>
+              <a href="courses" onClick={() => setMenuOpen(false)}>
                 Explore Courses
               </a>
-              <a href="#community" onClick={() => setMenuOpen(false)}>
+              <a href="" onClick={() => setMenuOpen(false)}>
                 Join Community
               </a>
-              <a href="#about" onClick={() => setMenuOpen(false)}>
+              <a href="about" onClick={() => setMenuOpen(false)}>
                 About Pro Hub
               </a>
-              <a href="#contact" onClick={() => setMenuOpen(false)}>
+              <a href="#" onClick={() => setMenuOpen(false)}>
                 Get in Touch
               </a>
             </nav>
@@ -1063,12 +1064,12 @@ function Header() {
               <h1 className="hero-title">
                 Build. Learn. <br />
                 Code. Repeat.
-              </h1>
+              </h1>               
 
               {/* Hero Subtitle/Lead Text - More natural and startup-focused */}
               <p className="hero-lead">
                 Join a vibrant community of passionate programmers. Learn from
-                real-world projects, get mentored by industry professionals, and
+                real-world projects, get mentored by industry Professionals, and
                 launch your coding career—all in one place.
               </p>
 
@@ -1103,7 +1104,6 @@ function Header() {
           </div>
         </div>
       </header>
-      <hr  />
 
       {/* ==================== STATS SECTION ==================== */}
       {/* Section showcasing key achievements and community growth */}

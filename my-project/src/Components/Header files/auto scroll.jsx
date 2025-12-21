@@ -19,7 +19,8 @@ const HorizontalScrollCards = () => {
     {
       id: 1,
       title: "Web Development",
-      description: "Professional web applications with modern technologies",
+      description:
+        "Build Professional web applications with modern technologies",
       image:
         "https://images.reallygooddesigns.com/2024/11/best-ecommerce-website-design.webp",
       badge: "Hot",
@@ -28,7 +29,7 @@ const HorizontalScrollCards = () => {
     {
       id: 2,
       title: "Mobile Apps",
-      description: "Cross-platform mobile solutions for iOS and Android",
+      description: "Build Cross-platform mobile solutions for iOS and Android",
       image:
         "https://cdn.dribbble.com/userupload/16734510/file/original-f1e2b34a8a8030e12f2a83625ecac051.png?resize=752x&vertical=center",
       badge: "New",
@@ -45,24 +46,26 @@ const HorizontalScrollCards = () => {
     },
     {
       id: 4,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure for your business",
+      title: "Adobe",
+      description: "Learn Adobe Photoshop, Illustrator,and more",
       image: "https://editmicro.co.za/wp-content/uploads/2019/09/Adobe.jpg",
       badge: "Trending",
       color: "primary",
     },
     {
       id: 5,
-      title: "Data Analytics",
-      description: "Turn your data into actionable insights",
+      title: "Microsoft Office",
+      description:
+        "Work with Applications like Word, Excel, PowerPoint and more",
       image: "https://www.addictivetips.com/app/uploads/2020/07/ms-365.webp",
       badge: "Featured",
       color: "primary",
     },
     {
       id: 6,
-      title: "E-commerce",
-      description: "Complete online store solutions",
+      title: "Hardware studies",
+      description:
+        "Learn the basic componets of a computer and how to operate them",
       image:
         "https://www.bytagig.com/wp-content/uploads/2024/09/Tips-for-Maintaining-and-Protecting-Computer-Hardware.jpg",
       badge: "Best Seller",
@@ -187,8 +190,9 @@ const HorizontalScrollCards = () => {
             </h2>
             {/* Section subtitle with muted color from theme */}
             <p className="text-center fs-5" style={{ color: "#666" }}>
-              Discover our comprehensive range of professional services
+              Discover our comprehensive range of professional services.
             </p>
+            <p>We teach skills and provide services</p>
           </div>
         </div>
 
@@ -361,9 +365,6 @@ const HorizontalScrollCards = () => {
                     </p>
 
                     {/* Learn More button with primary theme - positioned at bottom */}
-                    <button className="btn btn-card-theme py-2 mt-auto">
-                      Learn More →
-                    </button>
                   </div>
                 </div>
               </div>

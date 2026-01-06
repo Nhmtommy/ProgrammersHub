@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import HorizontalScrollCards from "./auto scroll";
 import Footer from "./footer";
+import logo from "../../assets/logo.jpg";
 
 function Header() {
   // ==================== STATE MANAGEMENT ====================
@@ -1064,7 +1065,7 @@ function Header() {
               <h1 className="hero-title">
                 Build. Learn. <br />
                 Code. Repeat.
-              </h1>               
+              </h1>
 
               {/* Hero Subtitle/Lead Text - More natural and startup-focused */}
               <p className="hero-lead">
@@ -1096,9 +1097,10 @@ function Header() {
             <div className="col-12 col-lg-6 d-flex justify-content-center align-items-center">
               {/* Hero image with responsive sizing */}
               <img
-                src="https://media.istockphoto.com/id/1344416095/photo/software-development.jpg?s=1024x1024&w=is&k=20&c=5j5Fl5NYIKc2cX5v45eMB5_TEGdsaX1qfTuJDTX9FJQ="
+                src={logo}
                 alt="Software development illustration"
                 className="hero-img"
+                style={{ border: "none", padding: "50px" }}
               />
             </div>
           </div>

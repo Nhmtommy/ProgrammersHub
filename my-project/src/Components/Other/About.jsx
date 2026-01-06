@@ -57,7 +57,7 @@ function AboutUs() {
         .site-brand {
           color: var(--primary);
           font-weight: 700;
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           letter-spacing: -0.015em;
           text-decoration: none;
           display: flex;
@@ -496,7 +496,7 @@ function AboutUs() {
           margin: 0;
           color: #fff;
           font-weight: 800;
-          font-size: 1.25rem;
+          font-size: 1.5rem;
           letter-spacing: -0.01em;
         }
 

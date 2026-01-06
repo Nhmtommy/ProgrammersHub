@@ -935,11 +935,11 @@ function Header() {
             <a className="nav-link" href="about">
               About Us
             </a>
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="contact">
               Contact Us
             </a>
-            <a className="nav-link" href="#">
-              Services
+            <a className="nav-link" href="contact">
+              Work
             </a>
 
             {/* Visual Separator between nav links and CTA button */}

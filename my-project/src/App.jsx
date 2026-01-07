@@ -22,10 +22,10 @@ function App() {
       "/contact": "contact",
       "/blog": "blog",
     };
-    
+
     const pageKey = pathToKey[location.pathname] || "home";
     updatePageMeta(pageKey);
-    
+
     // Scroll to top on route change
     window.scrollTo(0, 0);
   }, [location.pathname]);

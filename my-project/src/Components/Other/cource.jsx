@@ -57,7 +57,7 @@ function Courses() {
       duration: "6 weeks",
       price: "UGX 199.9k",
       image:
-        "https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "https://beecrowd.com/wp-content/uploads/2024/04/2022-07-19-Melhores-cursos-de-Python.jpg",
       description:
         "Start your programming journey with Python. Learn syntax, data structures, and problem-solving.",
       features: [
@@ -77,7 +77,7 @@ function Courses() {
       duration: "6 weeks",
       price: "UGX 299.9k",
       image:
-        "https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg?tx=w_1024,q_auto",
       description:
         "Start your programming journey with Javascript. Learn syntax, data structures, and problem-solving.",
       features: [
@@ -853,7 +853,9 @@ function Courses() {
                 margin: "0 0.5rem",
               }}
             ></div>
-            <button className="btn btn-primary-nav">Get Started</button>
+            <a href="contact">
+              <button className="btn btn-primary-nav">Get Started</button>
+            </a>
           </div>
 
           <button

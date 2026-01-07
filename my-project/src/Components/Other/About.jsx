@@ -715,7 +715,7 @@ function AboutUs() {
             <a className="nav-link" href="about#team">
               Team
             </a>
-            <a className="nav-link" href="#contact">
+            <a className="nav-link" href="contact">
               Contact
             </a>
             <div
@@ -776,7 +776,7 @@ function AboutUs() {
               <a href="#team" onClick={() => setMenuOpen(false)}>
                 Our Team
               </a>
-              <a href="#contact" onClick={() => setMenuOpen(false)}>
+              <a href="contact" onClick={() => setMenuOpen(false)}>
                 Contact
               </a>
             </nav>
@@ -984,7 +984,9 @@ function AboutUs() {
             tech career today. No prior experience required - just bring your
             curiosity and determination.
           </p>
-          <button className="cta-button">Join Programmer's Hub</button>
+          <a href="contact">
+            <button className="cta-button">Join Programmer's Hub</button>
+          </a>
         </div>
       </section>
       <Footer />

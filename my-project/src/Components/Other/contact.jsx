@@ -10,7 +10,6 @@ import {
   faClock,
   faPaperPlane,
   faComments,
-  faMap,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faWhatsapp,
@@ -22,9 +21,12 @@ import {
 
 function Contact() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const [text, setText] = useState("");
+  const Tell = () => {
+    setText("Please Use The LInks To Contact, Form Not Yet Active.");
+  };
   const socialLinks = {
-    whatsapp: "https://wa.me/256XXXXXXXXX",
+    whatsapp: "https://wa.me/256703884346",
     facebook: "https://facebook.com/programmershubbukasa",
     tiktok: "https://tiktok.com/@programmershubbukasa",
     instagram: "https://instagram.com/programmershubbukasa",
@@ -33,16 +35,14 @@ function Contact() {
 
   const contactInfo = {
     email: "contact@programmershubbukasa.com",
-    phone: "+256 XXX XXX XXX",
-    address: "Bukasa, Kampala, Uganda",
+    phone: "+256 703 884 346",
+    address: "Bukasa, Wakiso, Uganda",
     hours: "Mon - Fri: 9:00 AM - 6:00 PM",
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(
-      "This is a frontend-only demo. In a real application, this would connect to a backend."
-    );
+    alert("");
   };
 
   return (
@@ -50,6 +50,9 @@ function Contact() {
       {/* ==================== CUSTOM STYLES ==================== */}
       <style>{`
         /* ========== CSS VARIABLES / DESIGN TOKENS ========== */
+        .tell{
+        color:red;
+        }
         :root {
           --primary: #0066cc;
           --primary-dark: #0052a3;
@@ -540,7 +543,7 @@ function Contact() {
               <a href="/courses" onClick={() => setMenuOpen(false)}>
                 Courses
               </a>
-              <a href="#" onClick={() => setMenuOpen(false)}>
+              <a href="/" onClick={() => setMenuOpen(false)}>
                 Contact
               </a>
             </nav>
@@ -620,7 +623,7 @@ function Contact() {
                             href={`mailto:${contactInfo.email}`}
                             className="text-decoration-none"
                           >
-                            {contactInfo.email}
+                            Email US
                           </a>
                         </div>
                       </div>
@@ -637,7 +640,7 @@ function Contact() {
                             href={`tel:${contactInfo.phone}`}
                             className="text-decoration-none"
                           >
-                            {contactInfo.phone}
+                            Conatct US
                           </a>
                         </div>
                       </div>
@@ -737,6 +740,7 @@ function Contact() {
             </div>
 
             {/* Contact Form Column */}
+
             <div className="col-lg-6">
               <div className="card border-0 shadow-lg h-100">
                 <div className="card-body p-4 p-lg-5">
@@ -749,7 +753,7 @@ function Contact() {
                     </div>
                     <h3 className="h4 fw-bold mb-0">Send Us a Message</h3>
                   </div>
-
+                  <h3 className="tell">{text}</h3>
                   <p className="text-muted mb-4">
                     Fill out the form below and we'll get back to you as soon as
                     possible.
@@ -765,6 +769,7 @@ function Contact() {
                         className="form-control form-control-lg"
                         id="name"
                         placeholder="Enter your name"
+                        onChange={Tell}
                         required
                       />
                     </div>
@@ -778,6 +783,7 @@ function Contact() {
                         className="form-control form-control-lg"
                         id="email"
                         placeholder="Enter your email"
+                        onChange={Tell}
                         required
                       />
                     </div>
@@ -835,7 +841,7 @@ function Contact() {
       </section>
 
       {/* ==================== MAP SECTION ==================== */}
-      <section className="bg-light py-5">
+      {/* <section className="bg-light py-5">
         <div className="container py-4">
           <div className="row justify-content-center">
             <div className="col-lg-10">
@@ -911,9 +917,9 @@ function Contact() {
           </div>
         </div>
       </section>
-
+     */}
       {/* ==================== FAQ SECTION ==================== */}
-      <section className="py-5">
+      <section id="faq" className="py-5">
         <div className="container py-4">
           <div className="row justify-content-center">
             <div className="col-lg-8">
@@ -939,8 +945,9 @@ function Contact() {
                   >
                     <div className="accordion-body">
                       We offer a range of programming courses including Web
-                      Development, Mobile App Development, Data Science, and
-                      more. Visit our Courses page for detailed information.
+                      Development, WebApp Development and more. Visit our
+                      <a href="cource"> Cources</a> page for detailed
+                      information.
                     </div>
                   </div>
                 </div>
@@ -962,8 +969,8 @@ function Contact() {
                   >
                     <div className="accordion-body">
                       You can join our community by enrolling in any of our
-                      courses or by contacting us directly through our social
-                      media platforms.
+                      courses or by <a href="contact"> contacting</a> us
+                      directly through our social media platforms.
                     </div>
                   </div>
                 </div>

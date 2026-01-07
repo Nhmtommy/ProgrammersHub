@@ -323,7 +323,7 @@ const Footer = () => {
                     href="#"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    HTML and CSS
+                    HTML & CSS
                   </a>
                 </li>
                 {/* Python & Django link */}
@@ -332,7 +332,7 @@ const Footer = () => {
                     href="#"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    Python & Django
+                    Javascript
                   </a>
                 </li>
                 {/* AWS & Azure link */}
@@ -341,7 +341,7 @@ const Footer = () => {
                     href="#"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    GoLang
+                    React & ReactNative
                   </a>
                 </li>
 
@@ -351,7 +351,7 @@ const Footer = () => {
                     href="#"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    Javascript & Next.js
+                    Typescript & Next.js
                   </a>
                 </li>
               </ul>
@@ -391,14 +391,14 @@ const Footer = () => {
                 {/* Contact Us link */}
                 <li className="mb-2">
                   <a
-                    href="#"
+                    href="contact"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Contact Us
                   </a>
                 </li>
                 {/* Documentation link */}
-                <li className="mb-2">
+                {/*<li className="mb-2">
                   <a
                     href="#"
                     className="text-muted text-decoration-none hover-text-primary"
@@ -406,7 +406,7 @@ const Footer = () => {
                     Documentation
                   </a>
                 </li>
-                {/* API Reference link */}
+              
                 <li className="mb-2">
                   <a
                     href="#"
@@ -414,11 +414,13 @@ const Footer = () => {
                   >
                     API Reference
                   </a>
-                </li>
+                </li> 
+                */}
+
                 {/* Community link */}
                 <li className="mb-2">
                   <a
-                    href="#"
+                    href="contact"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Community
@@ -439,7 +441,7 @@ const Footer = () => {
           <div className="col-md-6 mb-2 mb-md-0">
             <p className="text-muted mb-0">
               &copy; {currentYear} Programmers Hub. All rights reserved. <br />
-              Developed with love by <a href="#">Kisuze Nahum</a>
+              Developed with love by <a href="mailto:nhmtommy@gmil.com">~Nhm</a>
             </p>
           </div>
 

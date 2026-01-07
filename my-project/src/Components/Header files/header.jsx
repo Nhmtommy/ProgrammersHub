@@ -4,6 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import HorizontalScrollCards from "./auto scroll";
 import Footer from "./footer";
 import logo from "../../assets/logo.jpg";
+import { Link } from "react-router-dom";
 
 function Header() {
   // ==================== STATE MANAGEMENT ====================
@@ -953,7 +954,11 @@ function Header() {
             ></div>
 
             {/* Primary CTA Button */}
-            <button className="btn btn-primary-nav">Join Community</button>
+            <a href="contact">
+              <button className="btn btn-primary-nav" href="contact">
+                Join Community
+              </button>
+            </a>
           </div>
 
           {/* Mobile Hamburger Menu Button - Visible only on tablets and below */}
@@ -1004,13 +1009,13 @@ function Header() {
               <a href="courses" onClick={() => setMenuOpen(false)}>
                 Explore Courses
               </a>
-              <a href="" onClick={() => setMenuOpen(false)}>
+              <a href="contact" onClick={() => setMenuOpen(false)}>
                 Join Community
               </a>
               <a href="about" onClick={() => setMenuOpen(false)}>
                 About Pro Hub
               </a>
-              <a href="#" onClick={() => setMenuOpen(false)}>
+              <a href="contact" onClick={() => setMenuOpen(false)}>
                 Get in Touch
               </a>
             </nav>
@@ -1020,13 +1025,13 @@ function Header() {
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Resources</div>
             <nav className="mobile-nav">
-              <a href="#blog" onClick={() => setMenuOpen(false)}>
+              <a href="blog" onClick={() => setMenuOpen(false)}>
                 Blog & Articles
               </a>
-              <a href="#events" onClick={() => setMenuOpen(false)}>
+              <a href="#" onClick={() => setMenuOpen(false)}>
                 Events
               </a>
-              <a href="#faq" onClick={() => setMenuOpen(false)}>
+              <a href="/contact#faq" onClick={() => setMenuOpen(false)}>
                 FAQ
               </a>
             </nav>
@@ -1036,7 +1041,10 @@ function Header() {
         {/* Menu Footer with CTA and Version Info */}
         <div className="mobile-menu-footer">
           {/* Primary CTA Button */}
-          <button className="btn btn-primary-nav">Get Started Today</button>
+          <a href="contact">
+            <button className="btn btn-primary-nav">Get Started Today</button>
+          </a>
+
           {/* Version Info */}
           <p
             style={{
@@ -1077,14 +1085,17 @@ function Header() {
               {/* CTA Buttons Container */}
               <div className="hero-cta">
                 {/* Primary CTA - Explore Courses */}
-                <button className="btn btn-hero btn-hero-primary">
-                  Learn More
-                </button>
-
+                <a href="about">
+                  <button className="btn btn-hero btn-hero-primary">
+                    Learn More
+                  </button>
+                </a>
                 {/* Secondary CTA - Join Community */}
-                <button className="btn btn-hero btn-hero-secondary">
-                  Join Community
-                </button>
+                <a href="contact">
+                  <button className="btn btn-hero btn-hero-secondary">
+                    Join Community
+                  </button>
+                </a>
               </div>
 
               {/* Trust badge showing social proof */}

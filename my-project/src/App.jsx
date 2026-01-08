@@ -33,7 +33,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Header />} />
-      <Route path="/home" element={<Header />} />
       <Route path="/about" element={<About />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/contact" element={<Contact />} />

@@ -1,6 +1,7 @@
 // Footer.js
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 // ==================== FOOTER COMPONENT ====================
 const Footer = () => {
@@ -197,19 +198,43 @@ const Footer = () => {
             {/* Social media links with hover effects */}
             <div className="social-links mt-3">
               {/* Twitter link */}
-              <a href="#" className="text-light me-3" aria-label="Twitter">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-light me-3"
+                aria-label="Twitter"
+              >
                 <i className="fab fa-twitter fa-lg"></i>
               </a>
               {/* LinkedIn link */}
-              <a href="#" className="text-light me-3" aria-label="LinkedIn">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-light me-3"
+                aria-label="LinkedIn"
+              >
                 <i className="fab fa-linkedin fa-lg"></i>
               </a>
               {/* GitHub link */}
-              <a href="#" className="text-light me-3" aria-label="GitHub">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-light me-3"
+                aria-label="GitHub"
+              >
                 <i className="fab fa-github fa-lg"></i>
               </a>
               {/* Discord link */}
-              <a href="#" className="text-light" aria-label="Discord">
+              <a
+                href="https://discord.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-light"
+                aria-label="Discord"
+              >
                 <i className="fab fa-discord fa-lg"></i>
               </a>
             </div>
@@ -247,39 +272,39 @@ const Footer = () => {
               <ul className="list-unstyled">
                 {/* Web Development link */}
                 <li className="mb-2">
-                  <a
-                    href="home"
+                  <Link
+                    to=""
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 {/* Mobile Apps link */}
                 <li className="mb-2">
-                  <a
-                    href="about"
+                  <Link
+                    to="about"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 {/* Cloud Solutions link */}
                 <li className="mb-2">
-                  <a
-                    href="courses"
+                  <Link
+                    to="courses"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Courses
-                  </a>
+                  </Link>
                 </li>
                 {/* DevOps link */}
                 <li className="mb-2">
-                  <a
-                    href="about#team"
+                  <Link
+                    to="about#team"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Our Team
-                  </a>
+                  </Link>
                 </li>
                 {/* UI/UX Design link */}
                 <li className="mb-2"></li>
@@ -319,40 +344,40 @@ const Footer = () => {
               <ul className="list-unstyled">
                 {/* React & Node.js link */}
                 <li className="mb-2">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     HTML & CSS
-                  </a>
+                  </Link>
                 </li>
                 {/* Python & Django link */}
                 <li className="mb-2">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Javascript
-                  </a>
+                  </Link>
                 </li>
                 {/* AWS & Azure link */}
                 <li className="mb-2">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     React & ReactNative
-                  </a>
+                  </Link>
                 </li>
 
                 {/* Machine Learning link */}
                 <li className="mb-2">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Typescript & Next.js
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -390,12 +415,12 @@ const Footer = () => {
               <ul className="list-unstyled">
                 {/* Contact Us link */}
                 <li className="mb-2">
-                  <a
-                    href="contact"
+                  <Link
+                    to="contact"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
                 {/* Documentation link */}
                 {/*<li className="mb-2">
@@ -419,12 +444,12 @@ const Footer = () => {
 
                 {/* Community link */}
                 <li className="mb-2">
-                  <a
-                    href="contact"
+                  <Link
+                    to="contact"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Community
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -450,12 +475,12 @@ const Footer = () => {
             <ul className="list-inline mb-0">
               {/* Privacy Policy link */}
               <li className="list-inline-item">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="text-muted text-decoration-none small hover-text-primary"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
 
               {/* Separator dot */}
@@ -463,12 +488,12 @@ const Footer = () => {
 
               {/* Terms of Service link */}
               <li className="list-inline-item">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="text-muted text-decoration-none small hover-text-primary"
                 >
                   Terms of Service
-                </a>
+                </Link>
               </li>
 
               {/* Separator dot */}
@@ -476,12 +501,12 @@ const Footer = () => {
 
               {/* Cookie Policy link */}
               <li className="list-inline-item">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="text-muted text-decoration-none small hover-text-primary"
                 >
                   Cookie Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

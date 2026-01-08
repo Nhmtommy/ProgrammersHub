@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Footer from "../Header files/footer";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
@@ -435,7 +436,7 @@ function Contact() {
       {/* ==================== NAVBAR ==================== */}
       <nav className="navbar site-navbar">
         <div className="container">
-          <a className="navbar-brand site-brand" href="/">
+          <Link className="navbar-brand site-brand" to="/">
             <svg
               width="32"
               height="32"
@@ -469,21 +470,21 @@ function Contact() {
               </text>
             </svg>
             Programmer's Hub <br /> <sub>Bukasa</sub>
-          </a>
+          </Link>
 
           <div className="d-none d-lg-flex align-items-center ms-auto gap-4">
-            <a className="nav-link" href="/">
+            <Link className="nav-link" to="/">
               Home
-            </a>
-            <a className="nav-link" href="/about">
+            </Link>
+            <Link className="nav-link" to="/about">
               About Us
-            </a>
-            <a className="nav-link" href="/courses">
+            </Link>
+            <Link className="nav-link" to="/courses">
               Courses
-            </a>
-            <a className="nav-link active" href="#">
+            </Link>
+            <Link className="nav-link active" to="#">
               Contact
-            </a>
+            </Link>
             <div
               style={{
                 width: "1px",
@@ -534,33 +535,33 @@ function Contact() {
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Navigation</div>
             <nav className="mobile-nav">
-              <a href="/" onClick={() => setMenuOpen(false)}>
+              <Link to="/" onClick={() => setMenuOpen(false)}>
                 Home
-              </a>
-              <a href="/about" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="/about" onClick={() => setMenuOpen(false)}>
                 About Us
-              </a>
-              <a href="/courses" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="/courses" onClick={() => setMenuOpen(false)}>
                 Courses
-              </a>
-              <a href="/" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="/" onClick={() => setMenuOpen(false)}>
                 Contact
-              </a>
+              </Link>
             </nav>
           </div>
 
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Quick Actions</div>
             <nav className="mobile-nav">
-              <a href="#courses" onClick={() => setMenuOpen(false)}>
+              <Link to="/#courses" onClick={() => setMenuOpen(false)}>
                 View Courses
-              </a>
-              <a href="#community" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="/#community" onClick={() => setMenuOpen(false)}>
                 Join Community
-              </a>
-              <a href="#faq" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="#faq" onClick={() => setMenuOpen(false)}>
                 FAQ
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
@@ -946,7 +947,7 @@ function Contact() {
                     <div className="accordion-body">
                       We offer a range of programming courses including Web
                       Development, WebApp Development and more. Visit our
-                      <a href="cource"> Cources</a> page for detailed
+                      <Link to="/courses"> Courses</Link> page for detailed
                       information.
                     </div>
                   </div>
@@ -969,7 +970,7 @@ function Contact() {
                   >
                     <div className="accordion-body">
                       You can join our community by enrolling in any of our
-                      courses or by <a href="contact"> contacting</a> us
+                      courses or by <Link to="/contact"> contacting</Link> us
                       directly through our social media platforms.
                     </div>
                   </div>

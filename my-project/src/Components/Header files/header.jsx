@@ -885,7 +885,7 @@ function Header() {
       <nav className="navbar site-navbar">
         <div className="container">
           {/* Logo/Brand Section */}
-          <a className="navbar-brand site-brand" href="/">
+          <Link className="navbar-brand site-brand" to="/">
             {/* SVG Icon with gradient */}
             <svg
               width="32"
@@ -924,24 +924,24 @@ function Header() {
             </svg>
             {/* Brand text */}
             Programmer's Hub <br /> <sub>Bukasa</sub>
-          </a>
+          </Link>
 
           {/* Desktop Navigation - Hidden on tablets and below */}
           <div className="d-none d-lg-flex align-items-center ms-auto gap-4">
             {/* Navigation Links */}
-            <a className="nav-link" href="courses">
+            <Link className="nav-link" to="/courses">
               Courses
-            </a>
+            </Link>
 
-            <a className="nav-link" href="about">
+            <Link className="nav-link" to="/about">
               About Us
-            </a>
-            <a className="nav-link" href="contact">
+            </Link>
+            <Link className="nav-link" to="/contact">
               Contact Us
-            </a>
-            <a className="nav-link" href="contact">
+            </Link>
+            <Link className="nav-link" to="/contact">
               Work
-            </a>
+            </Link>
 
             {/* Visual Separator between nav links and CTA button */}
             <div
@@ -954,11 +954,11 @@ function Header() {
             ></div>
 
             {/* Primary CTA Button */}
-            <a href="contact">
+            <Link to="/contact">
               <button className="btn btn-primary-nav" href="contact">
                 Join Community
               </button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Hamburger Menu Button - Visible only on tablets and below */}
@@ -1009,13 +1009,13 @@ function Header() {
               <Link to="courses" onClick={() => setMenuOpen(false)}>
                 Explore Courses
               </Link>
-              <Link href="contact" onClick={() => setMenuOpen(false)}>
+              <Link to="contact" onClick={() => setMenuOpen(false)}>
                 Join Community
               </Link>
-              <Link href="about" onClick={() => setMenuOpen(false)}>
+              <Link to="about" onClick={() => setMenuOpen(false)}>
                 About Pro Hub
               </Link>
-              <Link href="contact" onClick={() => setMenuOpen(false)}>
+              <Link to="contact" onClick={() => setMenuOpen(false)}>
                 Get in Touch
               </Link>
             </nav>
@@ -1025,15 +1025,15 @@ function Header() {
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Resources</div>
             <nav className="mobile-nav">
-              <a href="blog" onClick={() => setMenuOpen(false)}>
+              <Link to="blog" onClick={() => setMenuOpen(false)}>
                 Blog & Articles
-              </a>
-              <a href="#" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="#" onClick={() => setMenuOpen(false)}>
                 Events
-              </a>
-              <a href="/contact#faq" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="/contact#faq" onClick={() => setMenuOpen(false)}>
                 FAQ
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
@@ -1041,9 +1041,9 @@ function Header() {
         {/* Menu Footer with CTA and Version Info */}
         <div className="mobile-menu-footer">
           {/* Primary CTA Button */}
-          <a href="contact">
+          <Link to="/contact">
             <button className="btn btn-primary-nav">Get Started Today</button>
-          </a>
+          </Link>
 
           {/* Version Info */}
           <p
@@ -1085,17 +1085,17 @@ function Header() {
               {/* CTA Buttons Container */}
               <div className="hero-cta">
                 {/* Primary CTA - Explore Courses */}
-                <a href="about">
+                <Link to="about">
                   <button className="btn btn-hero btn-hero-primary">
                     Learn More
                   </button>
-                </a>
+                </Link>
                 {/* Secondary CTA - Join Community */}
-                <a href="contact">
+                <Link to="contact">
                   <button className="btn btn-hero btn-hero-secondary">
                     Join Community
                   </button>
-                </a>
+                </Link>
               </div>
 
               {/* Trust badge showing social proof */}
@@ -1349,7 +1349,9 @@ function Header() {
           </p>
 
           {/* CTA Button */}
-          <button className="cta-btn">Get Started Now</button>
+          <Link to="contact">
+            <button className="cta-btn">Get Started Now</button>
+          </Link>
         </div>
       </section>
 

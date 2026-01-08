@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Footer from "../Header files/footer";
+import { Link } from "react-router-dom";
 
 function Blog() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -681,7 +682,7 @@ function Blog() {
       {/* ==================== NAVBAR SECTION ==================== */}
       <nav className="navbar site-navbar">
         <div className="container">
-          <a className="navbar-brand site-brand" href="/">
+          <Link className="navbar-brand site-brand" to="/">
             <svg
               width="32"
               height="32"
@@ -715,24 +716,24 @@ function Blog() {
               </text>
             </svg>
             Programmer's Hub <br /> <sub>Bukasa</sub>
-          </a>
+          </Link>
 
           <div className="d-none d-lg-flex align-items-center ms-auto gap-4">
-            <a className="nav-link" href="home">
+            <Link className="nav-link" to="/">
               Home
-            </a>
-            <a className="nav-link" href="about">
+            </Link>
+            <Link className="nav-link" to="/about">
               About Us
-            </a>
-            <a className="nav-link" href="courses">
+            </Link>
+            <Link className="nav-link" to="/courses">
               Courses
-            </a>
-            <a className="nav-link" href="blog">
+            </Link>
+            <Link className="nav-link" to="/blog">
               Blog
-            </a>
-            <a className="nav-link" href="contact">
+            </Link>
+            <Link className="nav-link" to="/contact">
               Contact
-            </a>
+            </Link>
             <div
               style={{
                 width: "1px",
@@ -779,21 +780,21 @@ function Blog() {
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Navigation</div>
             <nav className="mobile-nav">
-              <a href="home" onClick={() => setMenuOpen(false)}>
+              <Link to="/" onClick={() => setMenuOpen(false)}>
                 Home
-              </a>
-              <a href="about" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="/about" onClick={() => setMenuOpen(false)}>
                 About Us
-              </a>
-              <a href="courses" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="/courses" onClick={() => setMenuOpen(false)}>
                 Courses
-              </a>
-              <a href="blog" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="/blog" onClick={() => setMenuOpen(false)}>
                 Blog
-              </a>
-              <a href="contact" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="/contact" onClick={() => setMenuOpen(false)}>
                 Contact
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
@@ -1031,9 +1032,9 @@ function Blog() {
             approach to learning. No rote memorization—just deep understanding
             through practice, projects, and peer learning.
           </p>
-          <a href="contact">
+          <Link to="/contact">
             <button className="cta-button">Start Your Learning Journey</button>
-          </a>
+          </Link>
         </div>
       </section>
 

@@ -6,14 +6,14 @@ export const pageMetadata = {
     description:
       "Learn web development, software engineering, and coding in Kampala, Uganda. Professional training, career guidance, and custom web development services for businesses.",
     keywords:
-      "web development training Uganda, coding courses Kampala, software engineering education, web development services Uganda",
+      "Kisuse nahum, Damba Norman, Coding, programmers Uganda, Wakiso, Young Developers, Developers, WebDeveloper, Web Development Services, web development training Uganda, coding courses Kampala, software engineering education",
   },
   about: {
     title: "About Us - Programmers Hub Bukasa | Tech Education & Web Services",
     description:
       "Discover Programmers Hub Bukasa's mission to transform tech talent in Uganda. Learn about our training programs, expert instructors, and success stories.",
     keywords:
-      "about programmers hub, tech training Uganda, coding education Kampala, software engineers Uganda",
+      "Kisuse nahum, Damba Norman, Programmers Hub Bukasa, Developers, Young Developers, tech training Uganda, coding education Kampala, Wakiso",
   },
   courses: {
     title:
@@ -21,7 +21,7 @@ export const pageMetadata = {
     description:
       "Enroll in professional web development courses, coding bootcamps, and software engineering programs in Kampala. Affordable, job-focused training for career advancement.",
     keywords:
-      "web development courses Uganda, coding bootcamp Kampala, learn programming, affordable coding training, web development certification",
+      "Coding, programmers Uganda, Wakiso, Young Developers, Developers, WebDeveloper, Web Development Services, web development courses Uganda, coding bootcamp Kampala, learn programming, affordable coding training",
   },
   contact: {
     title:

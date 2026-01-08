@@ -903,7 +903,7 @@ function Courses() {
               <Link to="/courses" onClick={() => setMenuOpen(false)}>
                 Courses
               </Link>
-              <Link to="#" onClick={() => setMenuOpen(false)}>
+              <Link to="/contact" onClick={() => setMenuOpen(false)}>
                 Contact
               </Link>
             </nav>

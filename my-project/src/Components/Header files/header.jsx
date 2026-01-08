@@ -1006,16 +1006,16 @@ function Header() {
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Navigation</div>
             <nav className="mobile-nav">
-              <Link to="courses" onClick={() => setMenuOpen(false)}>
+              <Link to="/courses" onClick={() => setMenuOpen(false)}>
                 Explore Courses
               </Link>
-              <Link to="contact" onClick={() => setMenuOpen(false)}>
+              <Link to="/contact" onClick={() => setMenuOpen(false)}>
                 Join Community
               </Link>
-              <Link to="about" onClick={() => setMenuOpen(false)}>
+              <Link to="/about" onClick={() => setMenuOpen(false)}>
                 About Pro Hub
               </Link>
-              <Link to="contact" onClick={() => setMenuOpen(false)}>
+              <Link to="/contact" onClick={() => setMenuOpen(false)}>
                 Get in Touch
               </Link>
             </nav>
@@ -1025,7 +1025,7 @@ function Header() {
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Resources</div>
             <nav className="mobile-nav">
-              <Link to="blog" onClick={() => setMenuOpen(false)}>
+              <Link to="/blog" onClick={() => setMenuOpen(false)}>
                 Blog & Articles
               </Link>
               <Link to="#" onClick={() => setMenuOpen(false)}>
@@ -1085,13 +1085,13 @@ function Header() {
               {/* CTA Buttons Container */}
               <div className="hero-cta">
                 {/* Primary CTA - Explore Courses */}
-                <Link to="about">
+                <Link to="/about">
                   <button className="btn btn-hero btn-hero-primary">
                     Learn More
                   </button>
                 </Link>
                 {/* Secondary CTA - Join Community */}
-                <Link to="contact">
+                <Link to="/contact">
                   <button className="btn btn-hero btn-hero-secondary">
                     Join Community
                   </button>

@@ -282,25 +282,25 @@ const Footer = () => {
                 {/* Mobile Apps link */}
                 <li className="mb-2">
                   <Link
-                    to="about"
+                    to="/about"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
-                    About Us
+                    About
                   </Link>
                 </li>
-                {/* Cloud Solutions link */}
+                {/* Courses link */}
                 <li className="mb-2">
                   <Link
-                    to="courses"
+                    to="/courses"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Courses
                   </Link>
                 </li>
-                {/* DevOps link */}
+                {/* Team link */}
                 <li className="mb-2">
                   <Link
-                    to="about#team"
+                    to="/about#team"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Our Team
@@ -416,7 +416,7 @@ const Footer = () => {
                 {/* Contact Us link */}
                 <li className="mb-2">
                   <Link
-                    to="contact"
+                    to="/contact"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Contact Us
@@ -445,7 +445,7 @@ const Footer = () => {
                 {/* Community link */}
                 <li className="mb-2">
                   <Link
-                    to="contact"
+                    to="/contact"
                     className="text-muted text-decoration-none hover-text-primary"
                   >
                     Community

@@ -1006,18 +1006,18 @@ function Header() {
           <div className="mobile-menu-section">
             <div className="mobile-menu-section-title">Navigation</div>
             <nav className="mobile-nav">
-              <a href="courses" onClick={() => setMenuOpen(false)}>
+              <Link to="courses" onClick={() => setMenuOpen(false)}>
                 Explore Courses
-              </a>
-              <a href="contact" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link href="contact" onClick={() => setMenuOpen(false)}>
                 Join Community
-              </a>
-              <a href="about" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link href="about" onClick={() => setMenuOpen(false)}>
                 About Pro Hub
-              </a>
-              <a href="contact" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link href="contact" onClick={() => setMenuOpen(false)}>
                 Get in Touch
-              </a>
+              </Link>
             </nav>
           </div>
 

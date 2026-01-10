@@ -832,9 +832,9 @@ function AboutUs() {
                 <p>
                   Programmer's Hub Bukasa started in 2024 with a simple mission:
                   to make quality programming education accessible to everyone
-                  in our community. We are a small study group has grown into a
-                  comprehensive learning center that has helping launch their
-                  tech careers.
+                  in our community. We are a small study group growing into a
+                  comprehensive learning center that is helping individulas
+                  launch their tech careers.
                 </p>
                 <p className="mt-4">
                   We believe that anyone can learn to code with the right

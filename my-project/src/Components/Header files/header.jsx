@@ -1343,9 +1343,9 @@ function Header() {
 
           {/* CTA Description */}
           <p>
-            Join Pro Hub today and become part of a thriving community of
-            developers. Whether you're a complete beginner or looking to level
-            up, we have the perfect course for you.
+            Join Programmers Hub today and become part of a thriving community
+            of developers. Whether you're a complete beginner or looking to
+            level up, we have the perfect course for you.
           </p>
 
           {/* CTA Button */}

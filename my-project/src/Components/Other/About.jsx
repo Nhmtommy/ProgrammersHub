@@ -794,7 +794,7 @@ function AboutUs() {
               fontWeight: "600",
             }}
           >
-            PRO HUB v1.0.0
+            PROGRAMMERS HUB v1.0.0
           </p>
         </div>
       </div>

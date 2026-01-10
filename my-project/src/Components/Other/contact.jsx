@@ -578,7 +578,7 @@ function Contact() {
               letterSpacing: "0.05em",
             }}
           >
-            PRO HUB v1.0.0
+            PROGRAMMERS HUB v1.0.0
           </p>
         </div>
       </div>

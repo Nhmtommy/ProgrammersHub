@@ -1013,7 +1013,7 @@ function Header() {
                 Join Community
               </Link>
               <Link to="/about" onClick={() => setMenuOpen(false)}>
-                About Pro Hub
+                About programmers hub
               </Link>
               <Link to="/contact" onClick={() => setMenuOpen(false)}>
                 Get in Touch
@@ -1056,7 +1056,7 @@ function Header() {
               letterSpacing: "0.05em",
             }}
           >
-            PRO HUB v1.0.0
+            PROGRAMMERS HUB v1.0.0
           </p>
         </div>
       </div>

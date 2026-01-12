@@ -4,6 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import HorizontalScrollCards from "./auto scroll";
 import Footer from "./footer";
 import logo from "../../assets/logo.jpg";
+import logo1 from "../../assets/programmers hub bukasa.png";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -75,6 +76,30 @@ function Header() {
         .site-brand:hover {
           color: var(--primary-dark);
           transform: translateY(-2px);
+        }
+
+        /* ========== LOGO IMAGE RESPONSIVE STYLING ========== */
+        .site-brand img {
+          height: auto;
+          max-width: 100%;
+          width: clamp(120px, 14vw, 500px);
+          object-fit: contain;
+          transition: width 0.3s ease;
+        }
+
+        /* Logo scaling on mobile */
+        @media (max-width: 767.98px) {
+          .site-brand img {
+            width: clamp(100px, 20vw, 160px);
+          }
+        }
+
+        /* Logo scaling on small mobile */
+        @media (max-width: 575.98px) {
+          .site-brand img {
+            width: 100%;
+            max-width: 180px;
+          }
         }
 
         /* ========== NAVIGATION LINKS STYLING ========== */
@@ -886,44 +911,8 @@ function Header() {
         <div className="container">
           {/* Logo/Brand Section */}
           <Link className="navbar-brand site-brand" to="/">
-            {/* SVG Icon with gradient */}
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              aria-hidden
-              focusable="false"
-            >
-              <defs>
-                {/* Gradient definition for brand icon */}
-                <linearGradient
-                  id="brandGrad"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stopColor="#0066cc" />
-                  <stop offset="100%" stopColor="#3d8eff" />
-                </linearGradient>
-              </defs>
-              {/* Background rounded rectangle */}
-              <rect width="32" height="32" rx="8" fill="url(#brandGrad)"></rect>
-              {/* Letter P text */}
-              <text
-                x="50%"
-                y="50%"
-                textAnchor="middle"
-                fill="#fff"
-                dy=".35em"
-                fontWeight="800"
-                fontSize="18"
-              >
-                P
-              </text>
-            </svg>
-            {/* Brand text */}
-            Programmer's Hub <br /> <sub>Bukasa</sub>
+            {/* Programmers hub logo */}
+            <img src={logo1} alt="Programmers Hub Logo" />
           </Link>
 
           {/* Desktop Navigation - Hidden on tablets and below */}
